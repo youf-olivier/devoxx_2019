@@ -29,3 +29,9 @@ https://testing-library.com/
 
 BBL de décembre :
 https://github.com/oyouf/hooks_bbl
+
+Custom Hooks :
+- PR Use Router : https://github.com/ReactTraining/react-router/pull/6453/files
+- ReHooks : https://github.com/Synvox/rehook
+- https://usehooks.com/
+- https://github.com/rehooks/awesome-react-hooks
