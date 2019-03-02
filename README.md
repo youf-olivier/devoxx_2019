@@ -11,19 +11,20 @@ Talk +  Sample App for Devoxx 2019
 - Complex state Managment (ou comment Remplacer Redux)
 - Fonctional Programming with Hooks
 - Les tests : TU / Test integration / E2E
+- Les meilleurs hooks déjà dispos (reHooks, forceUpdate, useRouter...)
 
 Ref : 
 
-Hooks
+Hooks : 
 https://medium.com/capbase-engineering/react-hooks-is-the-functional-paradise-youve-been-waiting-for-994e53f65f94
 https://medium.com/the-guild/under-the-hood-of-reacts-hooks-system-eb59638c9dba
 Replace Redux : 
 https://medium.com/capbase-engineering/part-3-the-react-hooks-based-alternative-to-redux-and-the-flux-pattern-a726220a8a9a
 
-Tools
+Tools : 
 https://axaguildev.github.io/
 
-Tests
+Tests : 
 https://testing-library.com/
 
 BBL de décembre :
