@@ -1,0 +1,20 @@
+function useEffect(
+  effect: EffectCallback,
+  inputs?: ReadonlyArray<any>
+): void;
+
+type EffectCallback = () => void | (() => void);
+
+useEffect(
+  () => {
+    doSomething();
+    const alertKey = ({key}) => alert(key + 'pressed');
+    document.addEventListener('keypress', alertKey);
+    return () =>{
+      document.removeEventListener('keypress', alertKey);
+    };
+  },
+  [a, b],
+);
+
+

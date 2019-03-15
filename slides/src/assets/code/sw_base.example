@@ -1,0 +1,11 @@
+const starWarsChars = [
+   { name:'Luke', side:'light' },
+   { name:'Darth Vader', side:'dark' },
+   { name:'Obi-wan Kenobi', side:'light'},
+   { name:'Palpatine', side:'dark'},
+]
+
+<FilteredList 
+  defaultState='dark' 
+  list={starWarsChars} 
+/>

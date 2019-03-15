@@ -1,0 +1,34 @@
+const context = useContext(Context);
+
+const memoizedCallback = useCallback(
+  () => {
+    doSomething(a, b);
+  },
+  [a, b],
+);
+
+<input onChange={memoizedCallback} />
+
+const memoizedValue = useMemo(
+    () => computeExpensiveValue(a, b),
+    [a, b]
+);
+
+<span>{memoizedValue}<span/>
+
+const refContainer = useRef(initialValue);
+useImperativeMethods(ref, createInstance, [inputs])
+
+function FancyInput(props, ref) {
+  const inputRef = useRef();
+  useImperativeMethods(ref, () => ({
+    focus: () => {
+      inputRef.current.focus();
+    }
+  }));
+  return <input ref={inputRef} ... />;
+}
+FancyInput = forwardRef(FancyInput);
+
+useLayoutEffect(didUpdate);
+

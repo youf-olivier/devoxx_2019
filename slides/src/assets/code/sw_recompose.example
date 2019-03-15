@@ -1,0 +1,36 @@
+// presentational
+const renderDisplayList = ({ list, handleSetState }) => (
+  <div>
+    <button onClick={handleSetState}>Switch</button>
+    {list.map(char => (
+      <div key={char.name}>
+        <div>Character: {char.name}</div>
+        <div>Side: {char.side}</div>
+      </div>
+    ))}
+  </div>
+);
+
+const withStateHoc = withState('stateValue', 'setState', 'dark');
+
+const mapPropsHoc = mapProps(({ list, stateValue, setState }) => {
+  const otherSide = stateValue === 'dark' ? 'light' : 'dark';
+  return {
+    setState,
+    otherSide,
+    list: list.filter(char => char.side === stateValue),
+  };
+});
+
+const withHandlersHoc = withHandlers({
+  handleSetState: ({ setState, otherSide }) => () =>
+    setState(otherSide),
+});
+
+const enhance = compose(
+  withStateHoc,
+  mapPropsHoc,
+  withHandlersHoc,
+);
+
+const FilteredList = enhance(renderDisplayList);

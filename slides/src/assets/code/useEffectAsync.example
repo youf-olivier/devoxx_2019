@@ -1,0 +1,13 @@
+useEffect(async () => {
+  const result = await fetch(url);
+  setData(result.data);
+}, [url]);
+
+const fetchData = async () => {
+  const result = await fetch(url);
+  setData(result.data);
+};
+
+useEffect(() => {
+  fetchData();
+}, [url]);
