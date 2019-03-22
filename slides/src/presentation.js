@@ -1,5 +1,5 @@
 // Import React
-import React from 'react';
+import React from "react";
 
 // Import Spectacle Core tags
 import {
@@ -13,54 +13,54 @@ import {
   Appear,
   Notes,
   S,
-  Text,
-} from 'spectacle';
-import CodeSlide from 'spectacle-code-slide';
+  Text
+} from "spectacle";
+import CodeSlide from "spectacle-code-slide";
 
-import Speaker from './Speaker';
-import olivier from './assets/images/olivier.jpg';
-import olivierbg from './assets/images/olivierbg.gif';
-import axalogo from './assets/images/axalogo.svg';
-import reactLogo from './assets/images/reactlogo.svg';
-import news from './assets/images/news.gif';
-import theonewithhooks from './assets/images/theonewithhooks.png';
-import tenor from './assets/images/tenor.gif';
-import recompose from './assets/images/recompose.png';
-import adclite from './assets/images/adclite.jpg';
-import tunning from './assets/images/tunning.jpg';
-import failTunning from './assets/images/failtunning.gif';
-import hook from './assets/images/hook.gif';
-import danReloading from './assets/images/danreloading.gif';
-import demo from './assets/images/demo.gif';
-import rule1 from './assets/images/rule1.gif';
-import custom from './assets/images/custom.gif';
-import yapot from './assets/images/yapot.gif';
-import question from './assets/images/question.gif';
-import miss from './assets/images/miss.gif';
-import why from './assets/images/why.gif';
-import waiting from './assets/images/waiting.gif';
-import chris from './assets/images/chris.gif';
+import Speaker from "./Speaker";
+import olivier from "./assets/images/olivier.jpg";
+import olivierbg from "./assets/images/olivierbg.gif";
+import axalogo from "./assets/images/axalogo.svg";
+import reactLogo from "./assets/images/reactlogo.svg";
+import news from "./assets/images/news.gif";
+import theonewithhooks from "./assets/images/theonewithhooks.png";
+import recompose from "./assets/images/recompose.png";
+import adclite from "./assets/images/adclite.jpg";
+import tunning from "./assets/images/tunning.jpg";
+import failTunning from "./assets/images/failtunning.gif";
+import hook from "./assets/images/hook.gif";
+import danReloading from "./assets/images/danreloading.gif";
+import renovation from "./assets/images/demo.gif";
+import rule1 from "./assets/images/rule1.gif";
+import custom from "./assets/images/custom.gif";
+import yapot from "./assets/images/yapot.gif";
+import question from "./assets/images/question.gif";
+import miss from "./assets/images/miss.gif";
+import why from "./assets/images/why.gif";
+import waiting from "./assets/images/waiting.gif";
+import chris from "./assets/images/chris.gif";
 
-import codeRecompose from './assets/code/sw_recompose.example';
-import codeClass from './assets/code/sw_class.example';
-import codeBase from './assets/code/sw_base.example';
-import useState from './assets/code/useState.example';
-import useStateBefore from './assets/code/useStateBefore.example';
-import useStateAfter from './assets/code/useStateAfter.example';
-import useEffect from './assets/code/useEffect.example';
-import useEffectBefore from './assets/code/useEffectBefore.example';
-import useEffectAfter from './assets/code/useEffectAfter.example';
-import useEffectAsync from './assets/code/useEffectAsync.example';
-import useReducer from './assets/code/useReducer.example';
-import useOthers from './assets/code/useOthers.example';
+import useStatePng from "./assets/code/useState.png";
+import useReducerPng from "./assets/code/useReducer.png";
+import useEffectPng from "./assets/code/useEffect.png";
+import useContextPng from "./assets/code/useContext.png";
+import useCallbackUseMemoPng from "./assets/code/useCallbackUseMemo.png";
+import useRefPng from "./assets/code/useRef.png";
+import eslintRulesPng from "./assets/code/eslintRules.png";
 
-import 'spectacle-theme-nova/syntax/prism.nova.css';
-import 'spectacle-theme-nova/syntax/prism-javascript';
-import 'spectacle-theme-nova/syntax/prism-typescript';
+import codeRecompose from "./assets/code/sw_recompose.example";
+import codeClass from "./assets/code/sw_class.example";
+import codeBase from "./assets/code/sw_base.example";
+
+import useOthers from "./assets/code/useOthers.example";
+
+import "spectacle-theme-nova/syntax/prism.nova.css";
+import "spectacle-theme-nova/syntax/prism-javascript";
+import "spectacle-theme-nova/syntax/prism-typescript";
 // Import theme
 // import createTheme from 'spectacle/lib/themes/default';
-import createTheme from 'spectacle-theme-nova';
-import './presentation.scss';
+import createTheme from "spectacle-theme-nova";
+import "./presentation.scss";
 
 const theme = createTheme();
 
@@ -68,17 +68,18 @@ export default class Presentation extends React.Component {
   render() {
     return (
       <Deck
-        transition={['zoom', 'slide', 'fade']}
+        transition={["zoom", "slide", "fade"]}
         transitionDuration={500}
         theme={theme}
         contentWidth="1280px"
+        contentHeight="800px"
       >
-        <Slide transition={['fade']} bgImage={reactLogo} bgDarken="0.8">
+        <Slide transition={["fade"]} bgImage={reactLogo} bgDarken="0.8">
           <Heading size={1} fit caps lineHeight={1} textColor="secondary">
             Les Hooks
           </Heading>
           <Heading size={1} fit caps lineHeight={3} textColor="secondary">
-            Comment revoir son application React 
+            Comment revoir son application React
           </Heading>
           <Notes>
             <div className="notes">
@@ -97,9 +98,9 @@ export default class Presentation extends React.Component {
           twitter="oyouf"
           github="oyouf"
         />
-        <Slide transition={['fade']} bgImage={news} bgDarken="0.5">
+        <Slide transition={["fade"]} bgImage={news} bgDarken="0.5">
           <Heading size={1} fit caps lineHeight={1} textColor="secondary">
-            The fact{' '}
+            The fact{" "}
           </Heading>
           <Appear>
             <Image src={theonewithhooks} margin="16px auto" />
@@ -117,14 +118,13 @@ export default class Presentation extends React.Component {
             </ol>
           </Notes>
         </Slide>
-        <Slide transition={['fade']} bgImage={tenor} bgDarken="0.2" />
-        <Slide transition={['fade']} bgImage={recompose} bgDarken="0.8">
+        <Slide transition={["fade"]} bgImage={recompose} bgDarken="0.8">
           <Heading size={1} fit lineHeight={1} textColor="secondary">
             Les HOC avec Recompose
           </Heading>
           <Image src={adclite} height="5em" margin="2em auto" />
         </Slide>
-        <Slide transition={['fade']} bgImage={tunning} bgDarken="0.8">
+        <Slide transition={["fade"]} bgImage={tunning} bgDarken="0.8">
           <Heading size={2} lineHeight={1} textColor="secondary">
             Principes & atouts
           </Heading>
@@ -168,7 +168,7 @@ export default class Presentation extends React.Component {
           </Notes>
         </Slide>
         <CodeSlide
-          bgColor={'primary'}
+          bgColor={"primary"}
           transition={[]}
           lang="jsx"
           code={codeBase}
@@ -176,14 +176,14 @@ export default class Presentation extends React.Component {
           ranges={[
             {
               loc: [0, 20],
-              title: 'Exemple',
+              title: "Exemple"
             },
             { loc: [0, 6] },
-            { loc: [7, 11] },
+            { loc: [7, 11] }
           ]}
         />
         <CodeSlide
-          bgColor={'primary'}
+          bgColor={"primary"}
           transition={[]}
           lang="jsx"
           code={codeClass}
@@ -191,33 +191,33 @@ export default class Presentation extends React.Component {
           ranges={[
             {
               loc: [0, 100],
-              title: 'Classe react',
+              title: "Classe react"
             },
             { loc: [1, 5] },
             { loc: [6, 9] },
             { loc: [10, 30] },
             { loc: [11, 12] },
             { loc: [13, 16] },
-            { loc: [17, 30] },
+            { loc: [17, 30] }
           ]}
         />
         <CodeSlide
-          bgColor={'primary'}
+          bgColor={"primary"}
           transition={[]}
           lang="jsx"
           code={codeRecompose}
           textSize="1.9em"
           ranges={[
-            { loc: [0, 100], title: 'Version Recompose' },
+            { loc: [0, 100], title: "Version Recompose" },
             { loc: [0, 12] },
             { loc: [13, 14] },
             { loc: [15, 23] },
             { loc: [24, 28] },
-            { loc: [29, 34], note: 'Fuuuuuuuuuuuuuusion !' },
-            { loc: [35, 36] },
+            { loc: [29, 34], note: "Fuuuuuuuuuuuuuusion !" },
+            { loc: [35, 36] }
           ]}
         />
-        <Slide transition={['fade']} bgImage={failTunning} bgDarken="0.8">
+        <Slide transition={["fade"]} bgImage={failTunning} bgDarken="0.8">
           <Heading size={2} lineHeight={1} textColor="secondary">
             Inconvénients
           </Heading>
@@ -242,12 +242,12 @@ export default class Presentation extends React.Component {
                 travaillé sur le sujet.
               </li>
               <li>
-                Mickael Jackson :{' '}
+                Mickael Jackson :{" "}
                 <a
                   href="https://www.youtube.com/watch?v=BcVAq3YFiuc"
                   target="blank"
                 >
-                  ici{' '}
+                  ici{" "}
                 </a>
               </li>
               <li>
@@ -257,7 +257,7 @@ export default class Presentation extends React.Component {
                   href="https://hackernoon.com/solving-the-problems-of-higher-order-components-without-throwing-the-baby-out-with-the-bathwater-40ddc72df5aa"
                   target="blank"
                 >
-                  ici{' '}
+                  ici{" "}
                 </a>
               </li>
               <li>
@@ -273,12 +273,12 @@ export default class Presentation extends React.Component {
             </ol>
           </Notes>
         </Slide>
-        <Slide transition={['fade']} bgImage={hook} bgDarken="0.7">
+        <Slide transition={["fade"]} bgImage={hook} bgDarken="0.7">
           <Heading size={1} lineHeight={1} textColor="secondary">
             Hooks
           </Heading>
         </Slide>
-        <Slide transition={['fade']} bgImage={why} bgDarken="0.7">
+        <Slide transition={["fade"]} bgImage={why} bgDarken="0.7">
           <Heading size={1} lineHeight={1} textColor="secondary">
             Why ?
           </Heading>
@@ -313,7 +313,7 @@ export default class Presentation extends React.Component {
             </ul>
           </Notes>
         </Slide>
-        <Slide transition={['fade']}>
+        <Slide transition={["fade"]}>
           <Heading size={1} fit caps lineHeight={1} textColor="secondary">
             Avec les Hooks...
           </Heading>
@@ -342,163 +342,167 @@ export default class Presentation extends React.Component {
             Principaux Hooks
           </Heading>
         </Slide>
-        <CodeSlide
-          bgColor={'primary'}
-          transition={[]}
-          lang="jsx"
-          code={useState}
-          textSize="2.2em"
-          ranges={[
-            { loc: [0, 19], title: 'useState' },
-            { loc: [0, 6] },
-            { loc: [7, 9] },
-            { loc: [0, 6] },
-            { loc: [10, 12] },
-          ]}
-        />
-        <CodeSlide
-          bgColor={'primary'}
-          transition={[]}
-          lang="jsx"
-          code={useStateBefore}
-          textSize="2.5em"
-          ranges={[
-            { loc: [0, 19], title: 'exemple - version Classe' },
-            { loc: [1, 7] },
-            { loc: [8, 18] },
-          ]}
-        />
-        <CodeSlide
-          bgColor={'primary'}
-          transition={[]}
-          lang="jsx"
-          code={useStateAfter}
-          textSize="2.2em"
-          ranges={[
-            { loc: [0, 50], title: 'exemple - version Hook' },
-            { loc: [3, 4] },
-            { loc: [7, 8] },
-            { loc: [8, 11] },
-          ]}
-        />
-        <CodeSlide
-          bgColor={'primary'}
-          transition={[]}
-          lang="jsx"
-          code={useReducer}
-          textSize="2em"
-          ranges={[
-            { loc: [0, 50], title: 'useReducer' },
-            { loc: [0, 2] },
-            { loc: [3, 15] },
-            { loc: [16, 34] },
-            { loc: [17, 19] },
-            { loc: [21, 31] },
-          ]}
-        />
-        <CodeSlide
-          bgColor={'primary'}
-          transition={[]}
-          lang="jsx"
-          code={useEffect}
-          textSize="2.2em"
-          ranges={[
-            { loc: [0, 50], title: 'useEffect' },
-            { loc: [0, 6] },
-            { loc: [7, 18] },
-          ]}
-        />
-        <CodeSlide
-          bgColor={'primary'}
-          transition={[]}
-          lang="jsx"
-          code={useEffectBefore}
-          textSize="2em"
-          ranges={[
-            { loc: [0, 50], title: 'exemple - version Classe' },
-            { loc: [1, 7] },
-            { loc: [8, 15] },
-            { loc: [16, 26] },
-          ]}
-        />
-        <CodeSlide
-          bgColor={'primary'}
-          transition={[]}
-          lang="jsx"
-          code={useEffectAfter}
-          textSize="2em"
-          ranges={[
-            { loc: [0, 50], title: 'exemple - version Hook' },
-            { loc: [3, 4] },
-            { loc: [5, 8] },
-            { loc: [9, 17] },
-          ]}
-        />
-        <CodeSlide
-          bgColor={'primary'}
-          transition={[]}
-          lang="jsx"
-          code={useEffectAsync}
-          textSize="2em"
-          ranges={[
-            { loc: [0, 50], title: 'useEffect - Async/await' },
-            {
-              loc: [0, 4],
-              note:
-                'Warning: useEffect function must return a cleanup function or nothing. Promises and useEffect(async () => …) are not supported, but you can call an async function inside an effect.',
-            },
-            { loc: [5, 9] },
-            { loc: [10, 13] },
-          ]}
-        />
-        <Slide bgImage={waiting} bgDarken="0.7">
-          <Heading size={1} lineHeight={1} textColor="secondary">
-            Donc...
+        <Slide transition={["fade"]}>
+          <Heading size={2} textColor="secondary">
+            useState
           </Heading>
+          <Image src={useStatePng} height="35em" margin="2em auto" />
           <Notes>
-            En pratique : Nous allons voir la différence entre recompose et les
-            hooks
-            <ol className="notes">
-              <li>Collection : Use State et Use Effect</li>
-              <li>Chronological : Use State et Use Effect et useContext</li>
-            </ol>
+            Usestate est l'incontournable
+            <ul className="notes">
+              <li>
+                Ititialisation avec une valeur fixe ou une fonction pour le lazy
+                loading{" "}
+              </li>
+              <li>
+                Mise a jour du state en valeur fixe ou avec une fonction avec en
+                paramètre l'ancien état, ou{" "}
+              </li>
+            </ul>
           </Notes>
         </Slide>
-        <CodeSlide
-          bgColor={'primary'}
-          transition={[]}
-          lang="jsx"
-          code={useOthers}
-          textSize="2em"
-          ranges={[
-            { loc: [0, 50], title: 'les autres' },
-            { loc: [0, 1] },
-            { loc: [2, 10] },
-            { loc: [11, 17] },
-            { loc: [18, 20] },
-            { loc: [21, 31] },
-            { loc: [32, 33] },
-          ]}
-        />
+        <Slide transition={["fade"]}>
+          <Heading size={2} textColor="secondary">
+            useReducer
+          </Heading>
+          <Image src={useReducerPng} height="42em" margin="2em auto" />
+          <Notes>
+            UseReducer permet la gestion d'un état plus complexe. Exemple :
+            <ul>
+              <li>formulaire avec validations croisées</li>
+              <li>
+                Gestion des fetchs avec gesgtion du loading des errors etc
+              </li>
+            </ul>
+          </Notes>
+        </Slide>
+        <Slide transition={["fade"]}>
+          <Heading size={2} textColor="secondary">
+            useEffect
+          </Heading>
+          <Image src={useEffectPng} height="40em" margin="2em auto" />
+        </Slide>
+        <Slide transition={["fade"]}>
+          <Heading size={1} fit caps lineHeight={1} textColor="secondary">
+            Quelques subltilités
+          </Heading>
+          <List textColor="quaternary">
+            <Appear>
+              <ListItem textSize="3em">Async/Await</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem textSize="3em">Chaque render possède son état</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem textSize="3em">useEffect remplace lifecycle</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem textSize="3em">
+                useEffect est une synchronisation, pas le lifecycle
+              </ListItem>
+            </Appear>
+            <Appear>
+              <ListItem textSize="3em">
+                Ne mentez pas à React à propos de dependances
+              </ListItem>
+            </Appear>
+            <Appear>
+              <ListItem textSize="3em">
+                Fetch Data et Update : ⚠️ Race condition
+              </ListItem>
+            </Appear>
+          </List>
+          <Notes>
+            <ul className="notes">
+              <li>
+                useEffect ne gère pas l'implémentation des await, il faut sortir
+                la fonction
+              </li>
+              <li>
+                A chaque rendu, au lancement de l'effect on capture l'état du
+                composant. Si on veut suivre une valeur, il faut utiliser le Ref
+              </li>
+              <li>
+                useEffect remplace lifecycle et ses multiples implémentations
+              </li>
+              <li>
+                Il faut changer sa facon de concevoir, et ne plus penser
+                lifecycle, mais synchronisation
+              </li>
+              <li>
+                Mentir peux ammener aux bugs. Chaque prop doit être spécifiée.
+                On peut découpler soit en rendant auto suffisant, soit avec
+                useReducer
+              </li>
+              <li>
+                Si trop de dépendance sortir une fonction dans une callback et
+                mettre la callback en dépendance
+              </li>
+              <li>
+                Race condition : On fait un fetch uin peu long, mais entre temps
+                l'état a été modifié, avec un simple booléen on peut résoudre le
+                problème
+              </li>
+            </ul>
+          </Notes>
+        </Slide>
+        <Slide transition={["fade"]}>
+          <Heading size={2} textColor="secondary">
+            useContext
+          </Heading>
+          <Image src={useContextPng} height="42em" margin="2em auto" />
+        </Slide>
+        <Slide transition={["fade"]}>
+          <Heading size={2} textColor="secondary">
+            useCallback & useMemo
+          </Heading>
+          <Image src={useCallbackUseMemoPng} height="20em" margin="2em auto" />
+        </Slide>
+        <Slide transition={["fade"]}>
+          <Heading size={2} textColor="secondary">
+            useRef
+          </Heading>
+          <Image src={useRefPng} height="42em" margin="2em auto" />
+        </Slide>
         <Slide bgImage={rule1} bgDarken="0.7">
           <Heading size={1} lineHeight={1} textColor="secondary">
-            Les règles à suivre
+            Rules of Hooks
           </Heading>
         </Slide>
-        <Slide transition={['fade']}>
+        <Slide transition={["fade"]}>
           <Heading size={1} fit caps lineHeight={1} textColor="secondary">
             Deux simples règles
           </Heading>
           <List>
             <Appear>
-              <ListItem textSize="3em">Les Hooks sont appelés en haut</ListItem>
+              <ListItem textSize="3em">
+                Les Hooks sont appelés en haut
+                <List>
+                  <Appear>
+                    <ListItem>
+                      Evitez les boucles, if et fonctions imbriquées
+                    </ListItem>
+                  </Appear>
+                </List>
+              </ListItem>
             </Appear>
             <Appear>
               <ListItem textSize="3em">
                 Les hooks ne doivent être appelés que dans des fonctions React
+                <List>
+                  <Appear>
+                    <ListItem>Appels dans les fonctions composant</ListItem>
+                  </Appear>
+                  <Appear>
+                    <ListItem>Appels dans les custom Hooks</ListItem>
+                  </Appear>
+                </List>
               </ListItem>
             </Appear>
           </List>
+          <Appear>
+            <Image src={eslintRulesPng} height="10em" margin="2em auto" />
+          </Appear>
           <Notes>
             <ol className="notes">
               <li>
@@ -516,117 +520,53 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide bgImage={custom} bgDarken="0.7">
           <Heading size={1} lineHeight={1} textColor="secondary">
-            Custom Hook{' '}
+            Custom Hook{" "}
           </Heading>
+          <List>
+            <Appear>
+              <ListItem textSize="3em">Réutilisabilité</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem textSize="3em">Lisibilité</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem textSize="3em">Testabilité</ListItem>
+            </Appear>
+          </List>
           <Notes>
             <ol className="notes">
               <li>Sortir les useState etc du form dans un useForme</li>
             </ol>
           </Notes>
         </Slide>
-        <Slide bgImage={miss} bgDarken="0.7">
+        <Slide bgImage={renovation} bgDarken="0.7">
           <Heading size={1} lineHeight={1} textColor="secondary">
-            Ce qui fâche
+            Revoir son application
           </Heading>
         </Slide>
-        <Slide transition={['fade']}>
-          <Heading size={1} lineHeight={1} textColor="secondary">
-            Ce qui change
+        <Slide transition={["fade"]}>
+          <Heading size={1} fit caps lineHeight={1} textColor="secondary">
+            Context
           </Heading>
-          <List>
+          <List textColor="quaternary">
             <Appear>
-              <ListItem textSize="3em">
-                Se passer de branch, withProps, mapProps, etc.
-              </ListItem>
+              <ListItem textSize="3em">Component Pattern</ListItem>
             </Appear>
             <Appear>
-              <ListItem textSize="3em">Ne couvre pas tout</ListItem>
+              <ListItem textSize="3em">HOC / Recompose</ListItem>
             </Appear>
             <Appear>
-              <ListItem textSize="3em">
-                Pas de async/await dans le useEffect
-              </ListItem>
+              <ListItem textSize="3em">Tests unitaires</ListItem>
             </Appear>
             <Appear>
-              <ListItem textSize="3em">Fonctionnel VS Imperatif</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem textSize="3em">Les Hooks sont magiques</ListItem>
+              <ListItem textSize="3em">Injection de dépendance</ListItem>
             </Appear>
           </List>
           <Notes>
-            <ol className="notes">
-              <li>Le UseEffect ne doit rien retourner</li>
-              <li>
-                A venir : des lifescycles manquant, le UseRouter et le UseRedux
-                etc.
-              </li>
-            </ol>
+            <ul className="notes">
+              <li>Les Hooks ne fonctionne pas dans les classes</li>
+            </ul>
           </Notes>
-        </Slide>
-        <Slide transition={['fade']} bgImage={chris} bgDarken="0.7">
-          <Heading size={1} lineHeight={1} textColor="secondary">
-            Mon avis
-          </Heading>
-          <List>
-            <Appear>
-              <ListItem textSize="3em">
-                Les Hooks ne sont pas magiques, juste des tableaux
-              </ListItem>
-            </Appear>
-            <Appear>
-              <ListItem textSize="3em">Accessible</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem textSize="3em">La communauté est emballée</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem textSize="3em">Une première version</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem textSize="3em">Recompose still alive !</ListItem>
-            </Appear>
-          </List>
-          <Notes>
-            <ol className="notes">
-              <li>Le UseEffect ne doit rien retourner</li>
-            </ol>
-          </Notes>
-        </Slide>
-        <Slide bgImage={question} bgDarken="0.7">
-          <Heading size={1} lineHeight={1} textColor="secondary">
-            Questions
-          </Heading>
-        </Slide>
-        <Slide bgColor={'#222'} bgDarken="0.7">
-          <Heading size={1} lineHeight={1} textColor="secondary">
-            Merci
-          </Heading>
-          <Image src={yapot} width="30em" />
-        </Slide>
-        <Slide bgColor={'#222'} bgDarken="0.7">
-          <Heading size={1} lineHeight={1} textColor="secondary">
-            Ressources
-          </Heading>
-          <Text>
-            Doc officielle : https://reactjs.org/docs/hooks-intro.html
-          </Text>
-          <Text>
-            HOC+TS :
-            https://medium.com/@jrwebdev/react-higher-order-component-patterns-in-typescript-42278f7590fb
-          </Text>
-          <Text>
-            Fonctionnement des hooks :
-            https://medium.com/the-guild/under-the-hood-of-reacts-hooks-system-eb59638c9dba
-          </Text>
-          <Text>
-            Roadmap : https://reactjs.org/blog/2018/11/27/react-16-roadmap.html
-          </Text>
-          <Text>RFC : https://github.com/reactjs/rfcs/pull/68</Text>
-          <Text>https://www.robinwieruch.de/react-hooks-fetch-data/</Text>
-          <Text>
-            https://medium.com/ottofellercom/can-react-hooks-api-replace-recompose-ea5460b7fde3
-          </Text>
         </Slide>
       </Deck>
     );
