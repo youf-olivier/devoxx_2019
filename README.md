@@ -48,6 +48,7 @@ Tools :
 
 Tests : 
 * https://testing-library.com/
+* https://www.valentinog.com/blog/testing-react/
 
 BBL de décembre :
 * https://github.com/oyouf/hooks_bbl
@@ -70,3 +71,4 @@ Remplacer Redux :
 
 Typescript
 * https://medium.com/@jrwebdev/react-hooks-in-typescript-88fce7001d0d
+* https://dev.to/busypeoples/notes-on-typescript-react-hooks-28j2

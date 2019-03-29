@@ -1,0 +1,30 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin-bottom: 2em;
+  &::after{
+    position: absolute;
+    bottom: 0;
+    content:'';
+    width:100%;
+    height: 1px;
+    border-bottom: 1px solid #AAA;
+  }
+  &__logo-container {
+    padding: 0.5em;
+  }
+  &__name{
+    color: #3032c1;
+    text-transform: uppercase;
+    height: 100%;
+    font-size: .8em;
+  }
+}
+
+.logo {
+  width: 4rem;
+  height: 4rem;
+}

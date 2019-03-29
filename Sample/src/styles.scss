@@ -1,0 +1,40 @@
+.App {
+  font-family: Source Sans Pro, sans-serif;
+  text-align: center;
+  &-container{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+  }
+}
+
+$color-blue:#3032c1;
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.6rem;
+}
+
+.btn {
+  background-color: #fff;
+  color: $color-blue;
+  border: 1px solid $color-blue;
+  text-transform: uppercase;
+  padding: 0em 4em;
+  margin: 2rem;
+  height: 2.5rem;
+  border-radius: 4px;
+  &--reverse {
+    background-color: $color-blue;
+    color: #fff;
+  }
+  &:hover{
+    background-color: $color-blue;
+    color: #fff;
+    transition: all .25s linear;
+  }
+}

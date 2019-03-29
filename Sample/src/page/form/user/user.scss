@@ -1,0 +1,33 @@
+$color-blue:#3032c1;
+
+.user-card{
+  margin: .4em auto;
+  border-radius: 4px;
+  width: 20em;
+  box-shadow:0 2px 19px 0 rgba(0, 0, 0, 0.11);
+  &:hover{
+    background-color: $color-blue;
+    color: #fff;
+    transition: all .25s linear;
+  }
+  &__link{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;  
+    padding: .2em 1em;
+    color: #3032c1;
+    text-decoration: none;
+    &:hover{
+      color: #EEE;
+    }
+  }
+  &__avatar{
+    border-radius: 50%;
+    width: 3em;
+    height: 3em;
+    margin: .1em;
+  }
+  &__login{
+    margin-left: 1em;
+  }
+}

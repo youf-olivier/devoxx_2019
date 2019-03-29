@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header test suite renders correctly 1`] = `
+<DocumentFragment>
+  <header
+    class="header"
+  >
+    <div
+      class="header__logo-container"
+    >
+      <img
+        alt="logo axa"
+        class="logo"
+        src="https://www.axa.fr/content/dam/logo/logo-axa.svg"
+      />
+    </div>
+    <span
+      class="header__name"
+    >
+      Ma belle application
+    </span>
+  </header>
+</DocumentFragment>
+`;

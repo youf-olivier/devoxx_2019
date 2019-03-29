@@ -1,0 +1,31 @@
+.form{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: auto;
+  &__input-container{
+    display: flex;
+    flex-direction: column;
+  }
+  &__line{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: .1em;
+  }
+  &__label{
+    text-align: left;
+    color: #444;
+    font-size: .8em;
+    margin-right: 2em;
+  }
+  &__error-message{
+    color:red;
+    font-size: .7em;
+  }
+}
+.btn--search{
+  text-align: center;
+  width: 16em;
+  margin: 1em auto;
+}

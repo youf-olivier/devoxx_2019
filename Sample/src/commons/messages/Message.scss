@@ -1,0 +1,19 @@
+.error-message {
+  width: 80%;
+  border: 1px solid #a02237;
+  display: block;
+  padding: 0.5em;
+  margin: 0 auto 1em auto;
+  background: #ffd5dc;
+  color: #a02237;
+  position: relative;
+  &__close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: none;
+    border: none;
+    font-weight: bold;
+    color: #a02237;
+  }
+}

@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`User card test suite renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="user-card"
+    data-testid="usercard"
+  >
+    <a
+      class="user-card__link"
+      href="http://comptegithub.com"
+    >
+      <img
+        alt="123123"
+        class="user-card__avatar"
+        src="http://avatar.jpg"
+      />
+      <span
+        class="user-card__login"
+      >
+        123123
+      </span>
+    </a>
+  </div>
+</DocumentFragment>
+`;
