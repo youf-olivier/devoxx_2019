@@ -1,0 +1,40 @@
+const FormContainer = () => {
+  const [inputs, setInputs] = useState(initialState);
+  const [hasSubmitOnce, setHasSubmitOnce] = useState(false);
+  const [errors, setErrors] = useState("");
+  const [query, setQuery] = useState("");
+  const [users, setUsers] = useState([]);
+  const { displayMessage } = useContext(MessageContext);
+  
+  useEffect(() => {
+    setErrors(computeErrors(inputs));
+  }, [inputs]);
+  useEffect(() => {
+    fetchUser(query).then(users => setUsers(users.items));
+  }, [query]);
+
+  const onChange = useCallback(onChangeCB(inputs, setInputs), [
+    inputs,
+    setInputs
+  ]);
+  const onSubmit = useCallback(
+    onSubmitCB(
+      inputs.githubAccount.value,
+      errors,
+      displayMessage,
+      setHasSubmitOnce,
+      setQuery
+    ),
+    [inputs.githubAccount.value, errors, displayMessage, setHasSubmitOnce]
+  );
+
+  return (
+    <FormComponent
+      onChange={onChange}
+      inputs={inputs}
+      onClick={onSubmit}
+      hasSubmitOnce={hasSubmitOnce}
+      users={users}
+    />
+  );
+};

@@ -10,7 +10,9 @@ exports[`Form container tests suite should return correct render before request 
     >
       <span
         class="form__label"
-      />
+      >
+        Compte Github
+      </span>
       <div
         class="form__input-container"
       >
@@ -45,7 +47,9 @@ exports[`Form container tests suite should show All User on load 1`] = `
     >
       <span
         class="form__label"
-      />
+      >
+        Compte Github
+      </span>
       <div
         class="form__input-container"
       >

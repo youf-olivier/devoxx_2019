@@ -1,8 +1,6 @@
 import React from "react";
 import {
   render,
-  waitForElement,
-  act,
   waitForDomChange,
   fireEvent
 } from "react-testing-library";

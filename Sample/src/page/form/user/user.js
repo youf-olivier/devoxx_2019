@@ -1,7 +1,7 @@
 import React from "react";
 import "./user.scss";
 
-export default ({ user }) => (
+const UserCard = ({ user }) => (
   <div className="user-card" data-testid="usercard">
     <a href={user.html_url} className="user-card__link">
       <img
@@ -13,3 +13,5 @@ export default ({ user }) => (
     </a>
   </div>
 );
+
+export default UserCard;

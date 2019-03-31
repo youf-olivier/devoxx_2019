@@ -1,6 +1,6 @@
 import React from "react";
 import "./header.scss";
-export default () => (
+const Header = () => (
   <header className="header">
     <div className="header__logo-container">
       <img
@@ -12,3 +12,5 @@ export default () => (
     <span className="header__name">Ma belle application</span>
   </header>
 );
+
+export default Header;

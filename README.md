@@ -23,12 +23,11 @@ Talk +  Sample App for Devoxx 2019
     * Exemple avec UseReducer et UseContext
 * Avec Typescript
     * Tout est fonction 
-* Fonctional Programming with Hooks
-    * Injection de dépendance grâce au HOC ou via les props
 * Les tests : TU / Test integration / E2E
     * Les vues : snapshot / React-testing-library
     * Les container : TU / TI avec React Testing Library
     * Les Customs Hooks : TI avec react-hooks-testing-library
+    * Injection de dépendance grâce au HOC ou via les props
 
 * Les meilleurs hooks déjà dispos (reHooks, forceUpdate, useRouter...)
 

@@ -39,6 +39,12 @@ import miss from "./assets/images/miss.gif";
 import why from "./assets/images/why.gif";
 import waiting from "./assets/images/waiting.gif";
 import chris from "./assets/images/chris.gif";
+import dolls from "./assets/images/dolls.gif";
+import power from "./assets/images/power.gif";
+import tests from "./assets/images/tests.gif";
+import kentcdoddstweet from "./assets/images/kentcdoddstweet.png";
+import reactbeer from "./assets/images/reactbeer.jpeg";
+import reactbeerlille from "./assets/images/reactbeerlille.jpg";
 
 import useStatePng from "./assets/code/useState.png";
 import useReducerPng from "./assets/code/useReducer.png";
@@ -47,12 +53,24 @@ import useContextPng from "./assets/code/useContext.png";
 import useCallbackUseMemoPng from "./assets/code/useCallbackUseMemo.png";
 import useRefPng from "./assets/code/useRef.png";
 import eslintRulesPng from "./assets/code/eslintRules.png";
+import codeHoc from "./assets/images/codeHoc.png";
+import codeHooks from "./assets/images/codeHooks.png";
+import useInFuture from "./assets/images/useInFuture.png";
+import testPyramid from "./assets/images/testPyramid.png";
+import reactredux from "./assets/images/reactredux.jpeg";
+import redux1 from "./assets/images/redux1.png";
+import redux2 from "./assets/images/redux2.png";
+import typescript1 from "./assets/images/typescript1.png";
+import typescript2 from "./assets/images/typescript2.png";
+import custominstall from "./assets/images/custominstall.png";
+import customUtilisation from "./assets/images/customUtilisation.png";
 
 import codeRecompose from "./assets/code/sw_recompose.example";
 import codeClass from "./assets/code/sw_class.example";
 import codeBase from "./assets/code/sw_base.example";
 
-import useOthers from "./assets/code/useOthers.example";
+import withHoc from "./assets/code/withHoc.example";
+import useHooks from "./assets/code/useHooks.example";
 
 import "spectacle-theme-nova/syntax/prism.nova.css";
 import "spectacle-theme-nova/syntax/prism-javascript";
@@ -74,6 +92,7 @@ export default class Presentation extends React.Component {
         contentWidth="1280px"
         contentHeight="800px"
       >
+        <Slide transition={["fade"]} bgImage={reactbeer} />
         <Slide transition={["fade"]} bgImage={reactLogo} bgDarken="0.8">
           <Heading size={1} fit caps lineHeight={1} textColor="secondary">
             Les Hooks
@@ -100,7 +119,7 @@ export default class Presentation extends React.Component {
         />
         <Slide transition={["fade"]} bgImage={news} bgDarken="0.5">
           <Heading size={1} fit caps lineHeight={1} textColor="secondary">
-            The fact{" "}
+            The fact
           </Heading>
           <Appear>
             <Image src={theonewithhooks} margin="16px auto" />
@@ -242,12 +261,12 @@ export default class Presentation extends React.Component {
                 travaillé sur le sujet.
               </li>
               <li>
-                Mickael Jackson :{" "}
+                Mickael Jackson :
                 <a
                   href="https://www.youtube.com/watch?v=BcVAq3YFiuc"
                   target="blank"
                 >
-                  ici{" "}
+                  ici
                 </a>
               </li>
               <li>
@@ -257,7 +276,7 @@ export default class Presentation extends React.Component {
                   href="https://hackernoon.com/solving-the-problems-of-higher-order-components-without-throwing-the-baby-out-with-the-bathwater-40ddc72df5aa"
                   target="blank"
                 >
-                  ici{" "}
+                  ici
                 </a>
               </li>
               <li>
@@ -352,11 +371,11 @@ export default class Presentation extends React.Component {
             <ul className="notes">
               <li>
                 Ititialisation avec une valeur fixe ou une fonction pour le lazy
-                loading{" "}
+                loading
               </li>
               <li>
                 Mise a jour du state en valeur fixe ou avec une fonction avec en
-                paramètre l'ancien état, ou{" "}
+                paramètre l'ancien état, ou
               </li>
             </ul>
           </Notes>
@@ -380,7 +399,7 @@ export default class Presentation extends React.Component {
           <Heading size={2} textColor="secondary">
             useEffect
           </Heading>
-          <Image src={useEffectPng} height="40em" margin="2em auto" />
+          <Image src={useEffectPng} height="35em" margin="2em auto" />
         </Slide>
         <Slide transition={["fade"]}>
           <Heading size={1} fit caps lineHeight={1} textColor="secondary">
@@ -520,7 +539,7 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide bgImage={custom} bgDarken="0.7">
           <Heading size={1} lineHeight={1} textColor="secondary">
-            Custom Hook{" "}
+            Custom Hook
           </Heading>
           <List>
             <Appear>
@@ -545,8 +564,8 @@ export default class Presentation extends React.Component {
           </Heading>
         </Slide>
         <Slide transition={["fade"]}>
-          <Heading size={1} fit caps lineHeight={1} textColor="secondary">
-            Context
+          <Heading size={2} lineHeight={1} textColor="secondary">
+            Contexte
           </Heading>
           <List textColor="quaternary">
             <Appear>
@@ -556,17 +575,258 @@ export default class Presentation extends React.Component {
               <ListItem textSize="3em">HOC / Recompose</ListItem>
             </Appear>
             <Appear>
-              <ListItem textSize="3em">Tests unitaires</ListItem>
+              <ListItem textSize="3em">TypeScript</ListItem>
             </Appear>
             <Appear>
-              <ListItem textSize="3em">Injection de dépendance</ListItem>
+              <ListItem textSize="3em">Tests</ListItem>
+            </Appear>
+          </List>
+        </Slide>
+        <Slide bgImage={dolls} bgDarken="0.7">
+          <Heading size={1} lineHeight={1} textColor="secondary">
+            Component Pattern
+          </Heading>
+          <List textColor="quaternary">
+            <Appear>
+              <ListItem textSize="3em">Component StateLess</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem textSize="3em">Container</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem textSize="3em">Custom Hooks</ListItem>
             </Appear>
           </List>
           <Notes>
-            <ul className="notes">
-              <li>Les Hooks ne fonctionne pas dans les classes</li>
-            </ul>
+            <ol className="notes">
+              <li>Le composant stateless est stable et facile a tester</li>
+              <li>Le container y ajoute les état et la logique</li>
+              <li>
+                Extrais, les customs hooks etraits les pans logiques et les
+                fonctionnalités réutilisable
+              </li>
+            </ol>
           </Notes>
+        </Slide>
+        <CodeSlide
+          bgColor={"primary"}
+          transition={[]}
+          lang="js"
+          code={withHoc}
+          textSize="1.7em"
+          ranges={[
+            {
+              loc: [0, 16],
+              title: "Avec Recompose et les Hoc"
+            },
+            { loc: [1, 4] },
+            { loc: [4, 7] },
+            { loc: [7, 11] },
+            { loc: [11, 12] },
+            { loc: [14, 15] }
+          ]}
+        />
+        <CodeSlide
+          bgColor={"primary"}
+          transition={[]}
+          lang="js"
+          code={useHooks}
+          textSize="1.5em"
+          ranges={[
+            {
+              loc: [0, 50],
+              title: "Avec les Hooks"
+            },
+            { loc: [1, 7] },
+            { loc: [8, 15] },
+            { loc: [15, 19] },
+            { loc: [19, 29] },
+            { loc: [30, 40] }
+          ]}
+        />
+        <Slide transition={["fade"]}>
+          <Heading size={2} textColor="secondary">
+            Des Hoc aux Hooks
+          </Heading>
+          <Fill>
+            <List>
+              <Appear>
+                <ListItem textSize="3em">Très similaire</ListItem>
+              </Appear>
+              <Appear>
+                <ListItem textSize="3em">
+                  Propriétés visibles : pas de colision
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem textSize="3em">Visibilité du codé généré</ListItem>
+              </Appear>
+            </List>
+          </Fill>
+        </Slide>
+        <Slide>
+          <div className="doubleimage-container">
+            <Appear>
+              <div className="doubleimage-content">
+                <Image src={codeHoc} margin="16px auto" />
+              </div>
+            </Appear>
+            <Appear>
+              <div className="doubleimage-content">
+                <Image src={codeHooks} margin="16px auto" />
+              </div>
+            </Appear>
+          </div>
+        </Slide>
+        <Slide transition={["fade"]}>
+          <Heading size={2} textColor="secondary">
+            Des Hoc aux Hooks
+          </Heading>
+          <Fill>
+            <List>
+              <ListItem textSize="3em">Très similaire</ListItem>
+              <ListItem textSize="3em">
+                Propriétés visibles : pas de colision
+              </ListItem>
+              <ListItem textSize="3em">Visibilité du codé généré</ListItem>
+              <Appear>
+                <ListItem textSize="3em">
+                  Les use à la place des with
+                  <List>
+                    <Appear>
+                      <ListItem>
+                        Quelques exceptions : withRouter, withRedux
+                      </ListItem>
+                    </Appear>
+                  </List>
+                </ListItem>
+              </Appear>
+            </List>
+          </Fill>
+        </Slide>
+        <Slide>
+          <Image src={useInFuture} margin="16px auto" />
+        </Slide>
+        <Slide bgImage={reactredux} bgDarken="0.7">
+          <Heading size={1} lineHeight={1} textColor="secondary">
+            Complex State Management
+          </Heading>
+        </Slide>
+        <Slide transition={["fade"]}>
+          <Heading size={2} textColor="secondary">
+            Store
+          </Heading>
+          <Image src={redux1} height="35em" margin="2em auto" />
+        </Slide>
+        <Slide transition={["fade"]}>
+          <Heading size={2} textColor="secondary">
+            Utilisation
+          </Heading>
+          <Image src={redux2} height="35em" margin="2em auto" />
+        </Slide>
+        <Slide bgImage={power} bgDarken="0.6">
+          <Heading size={1} lineHeight={1} textColor="secondary">
+            TypeScript
+          </Heading>
+          <Notes>
+            <ol className="notes">
+              <li>Type script et HOC sont assez complexes</li>
+              <li>
+                Les hooks sont de simples fonctions, il est facile de typer
+              </li>
+            </ol>
+          </Notes>
+        </Slide>
+        <Slide transition={["fade"]}>
+          <Image src={typescript1} height="40em" margin="2em auto" />
+        </Slide>
+        <Slide transition={["fade"]}>
+          <Image src={typescript2} height="45em" margin="2em auto" />
+        </Slide>
+        <Slide bgImage={tests} bgDarken="0.7">
+          <Heading size={1} lineHeight={1} textColor="secondary">
+            Tests
+          </Heading>
+          <Notes>
+            <ol className="notes">
+              <li>
+                Beaucoup d'app sont souvent bien couverte coté TU avec Jest
+              </li>
+              <li>
+                On se posent souvent la question d'avoir un test qui permet de
+                vérifier le composant en lui meme et non pas son implémentation
+              </li>
+            </ol>
+          </Notes>
+        </Slide>
+        <Slide transition={["fade"]}>
+          <Heading size={1} lineHeight={1} textColor="secondary">
+            Tests
+          </Heading>
+          <Image src={testPyramid} height="45em" margin="2em auto" />
+        </Slide>
+        <Slide transition={["fade"]}>
+          <Heading size={2} textColor="secondary">
+            Problématique
+          </Heading>
+          <Fill>
+            <List>
+              <Appear>
+                <ListItem textSize="3em">Des tests maintenables</ListItem>
+              </Appear>
+              <Appear>
+                <ListItem textSize="3em">
+                  Des tests qui assurent le bon fonctionnement
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem textSize="3em">
+                  Des tests resistants à la refacto
+                </ListItem>
+              </Appear>
+            </List>
+          </Fill>
+        </Slide>
+        <Slide transition={["fade"]}>
+          <Heading size={1} lineHeight={1} textColor="secondary">
+            La réponse
+          </Heading>
+          <Image src={kentcdoddstweet} margin="2em auto" />
+        </Slide>
+        <Slide transition={["fade"]}>
+          <Heading size={1} lineHeight={1} textColor="secondary">
+            React Testing Library
+          </Heading>
+        </Slide>
+        <Slide transition={["fade"]}>
+          <Heading size={2} lineHeight={1} textColor="secondary">
+            Avec Les cutom hooks
+          </Heading>
+          <Appear>
+            <Text textSize="1.5em" bgColor="red">
+              <code>
+                Invariant Violation: Hooks can only be called inside the body of
+                a function component.
+              </code>
+            </Text>
+          </Appear>
+          <Appear>
+            <Image src={custominstall} margin="2em auto" height="10em" />
+          </Appear>
+          <Appear>
+            <Image src={customUtilisation} margin="2em auto" height="20em" />
+          </Appear>
+        </Slide>
+        <Slide bgImage={question} bgDarken="0.7">
+          <Heading size={2} lineHeight={1} textColor="secondary">
+            Questions
+          </Heading>
+        </Slide>
+        <Slide bgColor={"#222"} bgDarken="0.7">
+          <Heading size={1} lineHeight={1} textColor="secondary">
+            Merci
+          </Heading>
+          <Image src={yapot} width="30em" />
         </Slide>
       </Deck>
     );

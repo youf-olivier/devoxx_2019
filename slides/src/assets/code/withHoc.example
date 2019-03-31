@@ -1,0 +1,15 @@
+const enhance = compose(
+  withState("inputs", "setInputs", initialState),
+  withState("users", "setUser", []),
+  withState("hasSubmitOnce", "setSubmit", false),
+  fromRenderProps(MessageContext.Consumer, ({ displayMessage }) => ({
+    displayMessage
+  })),
+  withHandlers({
+    onChange: onChangeHandler(validator),
+    onClick: onClickHandler(fetchUser)
+  }),
+  withLifeCycles(fetchUser)
+);
+
+const container = enhance(Form);

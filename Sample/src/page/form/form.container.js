@@ -71,25 +71,10 @@ export const onClickHandler = fetchUserInternal => ({
   }
 };
 
-export const setHandlers = {
-  onChange: onChangeHandler(validator),
-  onClick: onClickHandler(fetchUser)
-};
-
-const withMessage = fromRenderProps(
-  MessageContext.Consumer,
-  ({ displayMessage }) => ({ displayMessage })
-);
-
-const enhance = compose(
-  withState("inputs", "setInputs", initialState),
-  withState("users", "setUser", []),
-  withState("hasSubmitOnce", "setSubmit", false),
-  withMessage,
-  withHandlers(setHandlers),
+const withLifeCycles = fetchUserInternal =>
   lifecycle({
     componentDidMount() {
-      fetchUser().then(
+      fetchUserInternal().then(
         users => {
           this.props.setUser(users.items);
         },
@@ -98,7 +83,21 @@ const enhance = compose(
         }
       );
     }
-  })
+  });
+
+const enhance = compose(
+  withState("inputs", "setInputs", initialState),
+  withState("users", "setUser", []),
+  withState("hasSubmitOnce", "setSubmit", false),
+  fromRenderProps(MessageContext.Consumer, ({ displayMessage }) => ({
+    displayMessage
+  })),
+  withHandlers({
+    onChange: onChangeHandler(validator),
+    onClick: onClickHandler(fetchUser)
+  }),
+  withLifeCycles(fetchUser)
 );
 
-export default enhance(FormComponent);
+const FormContainer = enhance(FormComponent);
+export default FormContainer;

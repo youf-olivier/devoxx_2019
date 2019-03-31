@@ -6,14 +6,14 @@ import { fetchUser } from "./form.backend";
 
 const initialState = {
   githubAccount: {
-    value: "",
-    message: validator.githubAccount(""),
     id: "githubAccount",
-    name: "githubAccount"
+    label: "Compte Github",
+    value: "",
+    message: validator.githubAccount("")
   }
 };
 
-const computeErrors = state =>
+export const computeErrors = state =>
   Object.keys(state).reduce((acc, key) => {
     const input = state[key];
     if (input.message && input.message !== "") {
@@ -22,11 +22,40 @@ const computeErrors = state =>
     return acc;
   }, []);
 
+export const onChangeCB = (inputs, setInputs) => e => {
+  const { name, value } = e.target;
+  const message = validator[name](value);
+  setInputs({
+    ...inputs,
+    [name]: {
+      value,
+      message
+    }
+  });
+};
+
+export const onSubmitCB = (
+  accountValue,
+  errors,
+  displayMessage,
+  setHasSubmitOnce,
+  setQuery
+) => e => {
+  e.preventDefault();
+  setHasSubmitOnce(true);
+  if (errors.length > 0) {
+    displayMessage("Le formulaire contient des erreurs");
+  } else {
+    displayMessage("");
+    setQuery(accountValue);
+  }
+};
+
 const FormContainer = () => {
   const [inputs, setInputs] = useState(initialState);
   const [hasSubmitOnce, setHasSubmitOnce] = useState(false);
   const [errors, setErrors] = useState("");
-  const [querry, setQuerry] = useState("");
+  const [query, setQuery] = useState("");
   const [users, setUsers] = useState([]);
   const { displayMessage } = useContext(MessageContext);
   useEffect(() => {
@@ -34,37 +63,24 @@ const FormContainer = () => {
   }, [inputs]);
 
   useEffect(() => {
-    fetchUser(querry).then(users => setUsers(users.items));
-  }, [querry]);
+    fetchUser(query).then(users => setUsers(users.items));
+  }, [query]);
 
-  const onChange = useCallback(
-    e => {
-      const name = e.target.name;
-      const value = e.target.value;
-      const message = validator[name](value);
-      setInputs({
-        ...inputs,
-        [name]: {
-          value,
-          message
-        }
-      });
-    },
-    [inputs]
-  );
+  const onChange = useCallback(onChangeCB(inputs, setInputs), [
+    inputs,
+    setInputs
+  ]);
   const onSubmit = useCallback(
-    e => {
-      e.preventDefault();
-      setHasSubmitOnce(true);
-      if (errors.length > 0) {
-        displayMessage("Le formulaire contient des erreurs");
-      } else {
-        displayMessage("");
-        setQuerry(inputs.githubAccount.value);
-      }
-    },
-    [inputs.githubAccount.value, errors]
+    onSubmitCB(
+      inputs.githubAccount.value,
+      errors,
+      displayMessage,
+      setHasSubmitOnce,
+      setQuery
+    ),
+    [inputs.githubAccount.value, errors, displayMessage, setHasSubmitOnce]
   );
+
   return (
     <FormComponent
       onChange={onChange}
