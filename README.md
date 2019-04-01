@@ -48,6 +48,7 @@ Tools :
 Tests : 
 * https://testing-library.com/
 * https://www.valentinog.com/blog/testing-react/
+* https://react-testing-examples.com/
 
 BBL de décembre :
 * https://github.com/oyouf/hooks_bbl

@@ -35,16 +35,12 @@ import rule1 from "./assets/images/rule1.gif";
 import custom from "./assets/images/custom.gif";
 import yapot from "./assets/images/yapot.gif";
 import question from "./assets/images/question.gif";
-import miss from "./assets/images/miss.gif";
 import why from "./assets/images/why.gif";
-import waiting from "./assets/images/waiting.gif";
-import chris from "./assets/images/chris.gif";
 import dolls from "./assets/images/dolls.gif";
 import power from "./assets/images/power.gif";
 import tests from "./assets/images/tests.gif";
 import kentcdoddstweet from "./assets/images/kentcdoddstweet.png";
 import reactbeer from "./assets/images/reactbeer.jpeg";
-import reactbeerlille from "./assets/images/reactbeerlille.jpg";
 
 import useStatePng from "./assets/code/useState.png";
 import useReducerPng from "./assets/code/useReducer.png";
@@ -816,6 +812,24 @@ export default class Presentation extends React.Component {
           <Appear>
             <Image src={customUtilisation} margin="2em auto" height="20em" />
           </Appear>
+        </Slide>
+        <Slide>
+          <Heading size={2} lineHeight={1} textColor="secondary">
+            Injection de dépendance
+          </Heading>
+          <Fill>
+            <List>
+              <Appear>
+                <ListItem textSize="3em">High Order Component</ListItem>
+              </Appear>
+              <Appear>
+                <ListItem textSize="3em">Via les props</ListItem>
+              </Appear>
+              <Appear>
+                <ListItem textSize="3em">React Context</ListItem>
+              </Appear>
+            </List>
+          </Fill>
         </Slide>
         <Slide bgImage={question} bgDarken="0.7">
           <Heading size={2} lineHeight={1} textColor="secondary">

@@ -20,6 +20,17 @@ a {
   }
 }
 
+.community {
+  position: relative;
+  display: inline-block;
+  margin-top: 2em;
+  width: 12em;
+  margin-left: 1em;
+  &-icon {
+    width: 100%;
+  }
+}
+
 .speaker {
   position: relative;
   display: inline-block;
@@ -60,16 +71,25 @@ a {
     }
   }
   &__social {
+    list-style-type: none;
+    padding: 0 0 !important;
     &-item {
       display: flex;
+      padding-left: 0;
       justify-content: center;
       align-items: center;
+      padding-left: 0 !important;
       .speaker__social-img {
         background: $primary;
         padding: 2px;
         border-radius: 100%;
         margin: 0 0.5rem 0;
         display: inline;
+      }
+      &::before {
+        content: "";
+        display: block;
+        position: initial;
       }
     }
     &-link {

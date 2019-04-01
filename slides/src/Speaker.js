@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Heading,
   ListItem,
@@ -7,13 +7,14 @@ import {
   Text,
   Image,
   Link,
-  Notes,
-} from 'spectacle';
-import './style.scss';
+  Notes
+} from "spectacle";
+import "./style.scss";
 
-import logotwitter from './assets/images/twitter.svg';
-import logogithub from './assets/images/github.svg';
-import logowebsite from './assets/images/website.svg';
+import logotwitter from "./assets/images/twitter.svg";
+import logogithub from "./assets/images/github.svg";
+import logowebsite from "./assets/images/website.svg";
+import reactbeerlille from "./assets/images/reactbeerlille.jpg";
 
 const Speaker = ({
   name,
@@ -24,9 +25,9 @@ const Speaker = ({
   bg,
   website,
   twitter,
-  github,
+  github
 }) => (
-  <Slide id={`${name}`} transition={['fade']} bgImage={bg} bgDarken={0.75}>
+  <Slide id={`${name}`} transition={["fade"]} bgImage={bg} bgDarken={0.75}>
     <Heading size={1} caps textColor="primary">
       {name}
     </Heading>
@@ -90,6 +91,14 @@ const Speaker = ({
         </ListItem>
       )}
     </List>
+    <div className="community">
+      <Image
+        className="community-icon"
+        src={reactbeerlille}
+        alt={reactbeerlille}
+        width={"100%"}
+      />
+    </div>
     <Notes>
       <h4>Slide notes</h4>
       <ol>

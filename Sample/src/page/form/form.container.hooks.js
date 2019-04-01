@@ -4,14 +4,14 @@ import FormComponent from "./form";
 import validator from "./form.validation";
 import { fetchUser } from "./form.backend";
 
-const initialState = {
+const getInitialState = (validatorInternal = {
   githubAccount: {
     id: "githubAccount",
     label: "Compte Github",
     value: "",
-    message: validator.githubAccount("")
+    message: validatorInternal.githubAccount("")
   }
-};
+});
 
 export const computeErrors = state =>
   Object.keys(state).reduce((acc, key) => {
@@ -22,9 +22,9 @@ export const computeErrors = state =>
     return acc;
   }, []);
 
-export const onChangeCB = (inputs, setInputs) => e => {
+export const onChangeCB = validatorInternal => (inputs, setInputs) => e => {
   const { name, value } = e.target;
-  const message = validator[name](value);
+  const message = validatorInternal[name](value);
   setInputs({
     ...inputs,
     [name]: {
@@ -52,7 +52,7 @@ export const onSubmitCB = (
 };
 
 const FormContainer = () => {
-  const [inputs, setInputs] = useState(initialState);
+  const [inputs, setInputs] = useState(() => getInitialState(validator));
   const [hasSubmitOnce, setHasSubmitOnce] = useState(false);
   const [errors, setErrors] = useState("");
   const [query, setQuery] = useState("");
@@ -66,7 +66,7 @@ const FormContainer = () => {
     fetchUser(query).then(users => setUsers(users.items));
   }, [query]);
 
-  const onChange = useCallback(onChangeCB(inputs, setInputs), [
+  const onChange = useCallback(onChangeCB(validator)(inputs, setInputs), [
     inputs,
     setInputs
   ]);
