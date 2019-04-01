@@ -5,16 +5,19 @@ import Component from "./form";
 describe("Form test suite", () => {
   const users = [
     {
+      id: "1",
       login: "login1",
       avatar_url: "http://avatar1.jpg",
       html_url: "http://comptegithub.com"
     },
     {
+      id: "2",
       login: "login2",
       avatar_url: "http://avatar2.jpg",
       html_url: "http://comptegithub.com"
     },
     {
+      id: "3",
       login: "login3",
       avatar_url: "http://avatar3.jpg",
       html_url: "http://comptegithub.com"

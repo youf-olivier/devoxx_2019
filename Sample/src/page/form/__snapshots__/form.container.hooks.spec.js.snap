@@ -8,11 +8,12 @@ exports[`Form container tests suite should return correct render before request 
     <div
       class="form__line"
     >
-      <span
+      <label
         class="form__label"
+        for="githubAccount"
       >
         Compte Github
-      </span>
+      </label>
       <div
         class="form__input-container"
       >
@@ -45,11 +46,12 @@ exports[`Form container tests suite should show All User on load 1`] = `
     <div
       class="form__line"
     >
-      <span
+      <label
         class="form__label"
+        for="githubAccount"
       >
         Compte Github
-      </span>
+      </label>
       <div
         class="form__input-container"
       >
@@ -74,6 +76,7 @@ exports[`Form container tests suite should show All User on load 1`] = `
   <div
     class="user-list"
     data-testid="userlist"
+    style=""
   >
     <div
       class="user-card"

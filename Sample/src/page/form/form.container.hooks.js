@@ -4,7 +4,7 @@ import FormComponent from "./form";
 import validator from "./form.validation";
 import { fetchUser } from "./form.backend";
 
-const getInitialState = (validatorInternal = {
+const getInitialState = validatorInternal => ({
   githubAccount: {
     id: "githubAccount",
     label: "Compte Github",
@@ -28,6 +28,7 @@ export const onChangeCB = validatorInternal => (inputs, setInputs) => e => {
   setInputs({
     ...inputs,
     [name]: {
+      ...inputs[name],
       value,
       message
     }

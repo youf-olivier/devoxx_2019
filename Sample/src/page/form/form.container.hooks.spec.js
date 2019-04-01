@@ -91,15 +91,15 @@ describe("Form container tests suite", () => {
     });
 
     //First Load
-    const { container, getByTestId, getAllByTestId } = rendering;
+    const { container, getByText, getAllByTestId, getByLabelText } = rendering;
     await waitForDomChange({ container });
     const firstPass = getAllByTestId("usercard");
 
     expect(firstPass.length).toBe(3); //or not to be
 
     // Search oyouf
-    const input = container.querySelector("#githubAccount");
-    const button = getByTestId("button");
+    const input = getByLabelText(/Compte Github/i);
+    const button = getByText(/rechercher/i);
     fireEvent.change(input, { target: { value: "oyouf" } });
     fireEvent.click(button);
 
@@ -117,10 +117,10 @@ describe("Form container tests suite", () => {
     });
 
     //First Load
-    const { container, getByTestId, getAllByTestId } = rendering;
+    const { container, getByText, getAllByTestId } = rendering;
 
     // Search empty
-    const button = getByTestId("button");
+    const button = getByText(/rechercher/i);
     fireEvent.click(button);
 
     // Result Expected

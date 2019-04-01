@@ -1,12 +1,14 @@
-import React from "react";
-import User from "./user";
+import React, { Suspense } from "react";
 import "./form.scss";
+const User = React.lazy(() => import("./user"));
 
 const Form = ({ onChange, inputs, onClick, hasSubmitOnce, users }) => (
   <>
     <form className="form">
       <div className="form__line">
-        <span className="form__label">{inputs.githubAccount.label}</span>
+        <label className="form__label" htmlFor={inputs.githubAccount.id}>
+          {inputs.githubAccount.label}
+        </label>
         <div className="form__input-container">
           <input
             onChange={onChange}
@@ -23,17 +25,23 @@ const Form = ({ onChange, inputs, onClick, hasSubmitOnce, users }) => (
       </div>
 
       <div className="form__line form__line--alone">
-        <button className="btn btn--search" onClick={onClick} data-testid="button">
+        <button
+          className="btn btn--search"
+          onClick={onClick}
+          data-testid="button"
+        >
           Rechercher
         </button>
       </div>
     </form>
     {users && users.length > 0 && (
-      <div className="user-list" data-testid="userlist">
-        {users.map(user => (
-          <User user={user} key={user.id} />
-        ))}
-      </div>
+      <Suspense fallback={<div>Loading...</div>}>
+        <div className="user-list" data-testid="userlist">
+          {users.map(user => (
+            <User user={user} key={user.id} />
+          ))}
+        </div>
+      </Suspense>
     )}
   </>
 );
