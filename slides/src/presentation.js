@@ -146,28 +146,24 @@ export default class Presentation extends React.Component {
             Principes & atouts
           </Heading>
           <Fill>
-            <List>
-              <Appear>
-                <ListItem textSize="3em">HOC = Enhancer || Injector</ListItem>
-              </Appear>
-              <Appear>
-                <ListItem textSize="3em">
-                  Généricité et réutilisabilité
-                </ListItem>
-              </Appear>
-              <Appear>
-                <ListItem textSize="3em">Composition</ListItem>
-              </Appear>
-              <Appear>
-                <ListItem textSize="3em">Programmation fonctionnelle</ListItem>
-              </Appear>
-              <Appear>
-                <ListItem textSize="3em">Délégation</ListItem>
-              </Appear>
-              <Appear>
-                <ListItem textSize="3em">Tests</ListItem>
-              </Appear>
-            </List>
+            <Appear>
+              <Text textSize="3em">HOC = Enhancer || Injector</Text>
+            </Appear>
+            <Appear>
+              <Text textSize="3em">Généricité et réutilisabilité</Text>
+            </Appear>
+            <Appear>
+              <Text textSize="3em">Composition</Text>
+            </Appear>
+            <Appear>
+              <Text textSize="3em">Programmation fonctionnelle</Text>
+            </Appear>
+            <Appear>
+              <Text textSize="3em">Délégation</Text>
+            </Appear>
+            <Appear>
+              <Text textSize="3em">Tests</Text>
+            </Appear>
           </Fill>
           <Notes>
             <ol className="notes">
@@ -236,19 +232,17 @@ export default class Presentation extends React.Component {
           <Heading size={2} lineHeight={1} textColor="secondary">
             Inconvénients
           </Heading>
-          <List>
-            <Appear>
-              <ListItem textSize="3em">Lisibilité</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem textSize="3em">Collision</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem textSize="4em">
-                <S type="bold">TypeScript</S>
-              </ListItem>
-            </Appear>
-          </List>
+          <Appear>
+            <Text textSize="3em">Lisibilité</Text>
+          </Appear>
+          <Appear>
+            <Text textSize="3em">Collision</Text>
+          </Appear>
+          <Appear>
+            <Text textSize="4em">
+              <S type="bold">TypeScript</S>
+            </Text>
+          </Appear>
           <Notes>
             <ol className="notes">
               <li>
@@ -298,25 +292,21 @@ export default class Presentation extends React.Component {
             Why ?
           </Heading>
           <Appear>
-            <Text textSize="3em">Résoudre nativement</Text>
+            <Text textSize="5em" bold={true}>
+              Résoudre nativement
+            </Text>
           </Appear>
-          <List>
-            <Appear>
-              <ListItem textSize="3em">
-                Partage de logique entre les composants
-              </ListItem>
-            </Appear>
-            <Appear>
-              <ListItem textSize="3em">
-                Problème des composants complexes
-              </ListItem>
-            </Appear>
-            <Appear>
-              <ListItem textSize="3em">
-                Les classes embrouillent machines et developpeurs
-              </ListItem>
-            </Appear>
-          </List>
+          <Appear>
+            <Text textSize="3em">Partage de logique entre les composants</Text>
+          </Appear>
+          <Appear>
+            <Text textSize="3em">Problème des composants complexes</Text>
+          </Appear>
+          <Appear>
+            <Text textSize="3em">
+              Les classes embrouillent machines et developpeurs
+            </Text>
+          </Appear>
           <Notes>
             <ul className="notes">
               <li>
@@ -329,23 +319,21 @@ export default class Presentation extends React.Component {
           </Notes>
         </Slide>
         <Slide transition={["fade"]}>
-          <Heading size={1} fit caps lineHeight={1} textColor="secondary">
+          <Heading size={1} fit lineHeight={1} textColor="secondary">
             Avec les Hooks...
           </Heading>
-          <List textColor="quaternary">
-            <Appear>
-              <ListItem textSize="3em">Pas de breaking change</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem textSize="3em">Extraction de la logique</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem textSize="3em">Suppression des lifecycles</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem textSize="3em">Suppression des classes</ListItem>
-            </Appear>
-          </List>
+          <Appear>
+            <Text textSize="3em">Pas de breaking change</Text>
+          </Appear>
+          <Appear>
+            <Text textSize="3em">Extraction de la logique</Text>
+          </Appear>
+          <Appear>
+            <Text textSize="3em">Suppression des lifecycles</Text>
+          </Appear>
+          <Appear>
+            <Text textSize="3em">Suppression des classes</Text>
+          </Appear>
           <Notes>
             <ul className="notes">
               <li>Les Hooks ne fonctionne pas dans les classes</li>
@@ -419,35 +407,31 @@ export default class Presentation extends React.Component {
           </Notes>
         </Slide>
         <Slide transition={["fade"]}>
-          <Heading size={1} fit caps lineHeight={1} textColor="secondary">
+          <Heading size={1} fit lineHeight={1} textColor="secondary">
             Quelques subltilités
           </Heading>
-          <List textColor="quaternary">
-            <Appear>
-              <ListItem textSize="3em">Async/Await</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem textSize="3em">Chaque render possède son état</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem textSize="3em">useEffect remplace lifecycle</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem textSize="3em">
-                useEffect est une synchronisation, pas le lifecycle
-              </ListItem>
-            </Appear>
-            <Appear>
-              <ListItem textSize="3em">
-                Ne mentez pas à React à propos de dependances
-              </ListItem>
-            </Appear>
-            <Appear>
-              <ListItem textSize="3em">
-                Fetch Data et Update : ⚠️ Race condition
-              </ListItem>
-            </Appear>
-          </List>
+          <Appear>
+            <Text textSize="3em">Async/Await</Text>
+          </Appear>
+          <Appear>
+            <Text textSize="3em">Chaque render possède son état</Text>
+          </Appear>
+          <Appear>
+            <Text textSize="3em">useEffect remplace lifecycle</Text>
+          </Appear>
+          <Appear>
+            <Text textSize="3em">
+              useEffect est une synchronisation, pas le lifecycle
+            </Text>
+          </Appear>
+          <Appear>
+            <Text textSize="3em">
+              Ne mentez pas à React à propos de dependances
+            </Text>
+          </Appear>
+          <Appear>
+            <Text textSize="3em">Fetch Data et Update : ⚠️ Race condition</Text>
+          </Appear>
           <Notes>
             <ul className="notes">
               <li>utiliser then ou sortir la fonction</li>
@@ -528,7 +512,7 @@ export default class Presentation extends React.Component {
           </Heading>
         </Slide>
         <Slide transition={["fade"]}>
-          <Heading size={1} fit caps lineHeight={1} textColor="secondary">
+          <Heading size={1} fit lineHeight={1} textColor="secondary">
             Deux simples règles
           </Heading>
           <List>
@@ -565,7 +549,7 @@ export default class Presentation extends React.Component {
             <ol className="notes">
               <li>
                 Regle 1 : pas de if, de loop, de fonction imbriquée. Des Hooks
-                cutom oui
+                custom oui
               </li>
               <li>
                 Tout s'explique parceque React travaille avec un ordre de Hook
@@ -580,17 +564,15 @@ export default class Presentation extends React.Component {
           <Heading size={1} lineHeight={1} textColor="secondary">
             Custom Hook
           </Heading>
-          <List>
-            <Appear>
-              <ListItem textSize="3em">Réutilisabilité</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem textSize="3em">Lisibilité</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem textSize="3em">Testabilité</ListItem>
-            </Appear>
-          </List>
+          <Appear>
+            <Text textSize="3em">Réutilisabilité</Text>
+          </Appear>
+          <Appear>
+            <Text textSize="3em">Lisibilité</Text>
+          </Appear>
+          <Appear>
+            <Text textSize="3em">Testabilité</Text>
+          </Appear>
           <Notes>
             <ul className="notes">
               <li>Sortir les useState etc du form dans un useForme</li>
@@ -628,17 +610,15 @@ export default class Presentation extends React.Component {
           <Heading size={1} lineHeight={1} textColor="secondary">
             Component Pattern
           </Heading>
-          <List textColor="quaternary">
-            <Appear>
-              <ListItem textSize="3em">Component StateLess</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem textSize="3em">Container</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem textSize="3em">Custom Hooks</ListItem>
-            </Appear>
-          </List>
+          <Appear>
+            <Text textSize="3em">Component StateLess</Text>
+          </Appear>
+          <Appear>
+            <Text textSize="3em">Container</Text>
+          </Appear>
+          <Appear>
+            <Text textSize="3em">Custom Hooks</Text>
+          </Appear>
           <Notes>
             <ol className="notes">
               <li>Le composant stateless est stable et facile a tester</li>
@@ -691,19 +671,15 @@ export default class Presentation extends React.Component {
             Des Hoc aux Hooks
           </Heading>
           <Fill>
-            <List>
-              <Appear>
-                <ListItem textSize="3em">Très similaire</ListItem>
-              </Appear>
-              <Appear>
-                <ListItem textSize="3em">
-                  Propriétés visibles : pas de colision
-                </ListItem>
-              </Appear>
-              <Appear>
-                <ListItem textSize="3em">Visibilité du codé généré</ListItem>
-              </Appear>
-            </List>
+            <Appear>
+              <Text textSize="3em">Très similaire</Text>
+            </Appear>
+            <Appear>
+              <Text textSize="3em">Propriétés visibles : pas de colision</Text>
+            </Appear>
+            <Appear>
+              <Text textSize="3em">Visibilité du code généré</Text>
+            </Appear>
           </Fill>
           <Notes>
             <h1>======DEMO =====</h1>
@@ -729,25 +705,17 @@ export default class Presentation extends React.Component {
             Des Hoc aux Hooks
           </Heading>
           <Fill>
-            <List>
-              <ListItem textSize="3em">Très similaires</ListItem>
-              <ListItem textSize="3em">
-                Propriétés visibles : pas de collision
-              </ListItem>
-              <ListItem textSize="3em">Visibilité du code généré</ListItem>
-              <Appear>
-                <ListItem textSize="3em">
-                  Les use à la place des with
-                  <List>
-                    <Appear>
-                      <ListItem>
-                        Quelques exceptions : withRouter, withRedux
-                      </ListItem>
-                    </Appear>
-                  </List>
-                </ListItem>
-              </Appear>
-            </List>
+            <Text textSize="3em">Très similaires</Text>
+            <Text textSize="3em">Propriétés visibles : pas de collision</Text>
+            <Text textSize="3em">Visibilité du code généré</Text>
+            <Appear>
+              <Text textSize="3em">
+                Les use à la place des with
+                <Appear>
+                  <Text>Quelques exceptions : withRouter, withRedux</Text>
+                </Appear>
+              </Text>
+            </Appear>
           </Fill>
         </Slide>
         <Slide>
@@ -758,7 +726,7 @@ export default class Presentation extends React.Component {
             Complex State Management
           </Heading>
           <Notes>
-            Plutot que d'utiliser Redux, pourquoi ne pas utiliser les Hooks ? 
+            Plutot que d'utiliser Redux, pourquoi ne pas utiliser les Hooks ?
           </Notes>
         </Slide>
         <Slide transition={["fade"]}>
@@ -767,7 +735,8 @@ export default class Presentation extends React.Component {
           </Heading>
           <Image src={redux1} height="45em" margin="2em auto" />
           <Notes>
-            Tout commence ici, nous créons le store. Il n'est qu'un etat complet de l'application
+            Tout commence ici, nous créons le store. Il n'est qu'un etat complet
+            de l'application
           </Notes>
         </Slide>
         <Slide transition={["fade"]}>
@@ -822,21 +791,20 @@ export default class Presentation extends React.Component {
             Problématique
           </Heading>
           <Fill>
-            <List>
-              <Appear>
-                <ListItem textSize="3em">Des tests maintenables</ListItem>
-              </Appear>
-              <Appear>
-                <ListItem textSize="3em">
-                  Des tests qui assurent le bon fonctionnement
-                </ListItem>
-              </Appear>
-              <Appear>
-                <ListItem textSize="3em">
-                  Des tests resistants à la refacto
-                </ListItem>
-              </Appear>
-            </List>
+            <Appear>
+              <Text textSize="4em" bold={true}>
+                Avoir des tests
+              </Text>
+            </Appear>
+            <Appear>
+              <Text textSize="3em">maintenables</Text>
+            </Appear>
+            <Appear>
+              <Text textSize="3em">qui assurent le bon fonctionnement</Text>
+            </Appear>
+            <Appear>
+              <Text textSize="3em">resistants à la refacto</Text>
+            </Appear>
           </Fill>
         </Slide>
         <Slide transition={["fade"]}>
@@ -852,7 +820,7 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide transition={["fade"]}>
           <Heading size={2} lineHeight={1} textColor="secondary">
-            Avec Les cutom hooks
+            Avec Les custom hooks
           </Heading>
           <Appear>
             <Text textSize="1.5em" bgColor="red">
@@ -868,24 +836,6 @@ export default class Presentation extends React.Component {
           <Appear>
             <Image src={customUtilisation} margin="2em auto" height="20em" />
           </Appear>
-        </Slide>
-        <Slide>
-          <Heading size={2} lineHeight={1} textColor="secondary">
-            Injection de dépendance
-          </Heading>
-          <Fill>
-            <List>
-              <Appear>
-                <ListItem textSize="3em">High Order Component</ListItem>
-              </Appear>
-              <Appear>
-                <ListItem textSize="3em">Via les props</ListItem>
-              </Appear>
-              <Appear>
-                <ListItem textSize="3em">React Context</ListItem>
-              </Appear>
-            </List>
-          </Fill>
         </Slide>
         <Slide bgImage={question} bgDarken="0.6">
           <Heading size={2} lineHeight={1} textColor="secondary">
