@@ -1,12 +1,12 @@
-function useState<S>(
-  initialState: S | (() => S),
-): [S, Dispatch<SetStateAction<S>>];
+function useState<S>(initialState: S | (() => S)):
+	[S,Dispatch<SetStateAction<S>>];
 
 type SetStateAction<S> = S | ((prevState: S) => S);
 type Dispatch<A> = (value: A) => void;
 
-const [state, setState] 
-  = useState(initialState);
+//Examples
+const [state, setState] = useState(initialState);
+const [state, setState] = useState(() => grosCalculDeLaMort());
 
-const [state, setState] 
-  = useState(() => grosCalculDeLaMort());
+setState(0);
+setState(count => count +1);

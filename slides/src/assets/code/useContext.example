@@ -1,0 +1,21 @@
+export const MessageContext = createContext(null);
+
+const MessageProvider = props => {
+  const [message, displayMessage] = useState("");
+  return (
+    <MessageContext.Provider value={{ message, displayMessage }}>
+      {props.children}
+    </MessageContext.Provider>
+  );
+};
+
+
+const MessageContainer = () => {
+  const { message, displayMessage } = useContext(MessageContext);
+  return message && (
+    <div>
+      <h1>Message : {message}</h1>
+      <button onClick={()=> displayMessage('Hello World')}>Say Hello</button>
+    </div>
+  );
+};

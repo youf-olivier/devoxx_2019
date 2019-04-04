@@ -2,9 +2,9 @@ function useEffect(
   effect: EffectCallback,
   inputs?: ReadonlyArray<any>
 ): void;
-
 type EffectCallback = () => void | (() => void);
 
+// Example
 useEffect(
   () => {
     doSomething();
@@ -16,5 +16,3 @@ useEffect(
   },
   [a, b],
 );
-
-

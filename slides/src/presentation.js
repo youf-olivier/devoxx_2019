@@ -44,8 +44,10 @@ import reactbeer from "./assets/images/reactbeer.jpeg";
 
 import useStatePng from "./assets/code/useState.png";
 import useReducerPng from "./assets/code/useReducer.png";
+import useReducerPng2 from "./assets/code/useReducer2.png";
 import useEffectPng from "./assets/code/useEffect.png";
 import useContextPng from "./assets/code/useContext.png";
+import useContextPng2 from "./assets/code/useContext2.png";
 import useCallbackUseMemoPng from "./assets/code/useCallbackUseMemo.png";
 import useRefPng from "./assets/code/useRef.png";
 import eslintRulesPng from "./assets/code/eslintRules.png";
@@ -103,16 +105,6 @@ export default class Presentation extends React.Component {
             </div>
           </Notes>
         </Slide>
-        <Speaker
-          name="Olivier YOUF"
-          job="Front-end Developer"
-          company="Axa"
-          avatar={olivier}
-          companyIcon={axalogo}
-          bg={olivierbg}
-          twitter="oyouf"
-          github="oyouf"
-        />
         <Slide transition={["fade"]} bgImage={news} bgDarken="0.5">
           <Heading size={1} fit caps lineHeight={1} textColor="secondary">
             The fact
@@ -133,9 +125,19 @@ export default class Presentation extends React.Component {
             </ol>
           </Notes>
         </Slide>
+        <Speaker
+          name="Olivier YOUF"
+          job="Front-end Developer"
+          company="Axa"
+          avatar={olivier}
+          companyIcon={axalogo}
+          bg={olivierbg}
+          twitter="oyouf"
+          github="oyouf"
+        />
         <Slide transition={["fade"]} bgImage={recompose} bgDarken="0.8">
           <Heading size={1} fit lineHeight={1} textColor="secondary">
-            Les HOC avec Recompose
+            Hier : Les HOC avec Recompose
           </Heading>
           <Image src={adclite} height="5em" margin="2em auto" />
         </Slide>
@@ -170,14 +172,12 @@ export default class Presentation extends React.Component {
           <Notes>
             <ol className="notes">
               <li>
-                Enhancers: Wrap a component with additional functionality/props.
-                Exemple Ajouter un LOADING Injectors: Inject props into a
-                component. Exemple : Connect de Redux
+                Enhancers: Ajouter un LOADING Injectors: Inject props Exemple :
+                Connect de Redux
               </li>
               <li>Réutilisabilité : WithLoader, withRouter, WithUser etc</li>
-              <li>Composition : on peut composer plusieurs</li>
               <li>Composition avec Compose.</li>
-              <li>Délégation Component/container</li>
+              <li>Délégation Component/container pattern</li>
               <li>Tests : avec Recompose tout est fonction VS classes</li>
             </ol>
           </Notes>
@@ -393,9 +393,30 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide transition={["fade"]}>
           <Heading size={2} textColor="secondary">
+            useReducer
+          </Heading>
+          <Image src={useReducerPng2} height="42em" margin="2em auto" />
+        </Slide>
+        <Slide transition={["fade"]}>
+          <Heading size={2} textColor="secondary">
             useEffect
           </Heading>
-          <Image src={useEffectPng} height="35em" margin="2em auto" />
+          <Image src={useEffectPng} height="40em" margin="2em auto" />
+          <Notes>
+            <ul className="notes">
+              <li>
+                UseEffect est une fonction qui ne doit rien renvoyer, ou juste
+                une fonction de cleanup, qui elle meme ne renvoi rien
+              </li>
+              <li>
+                Le cleanup est appelé lors de l'unmouut et a chaque render
+              </li>
+              <li>
+                les deps permettent de savoir si on doit relancer au render{" "}
+              </li>
+              <li>On peut séparer les effect pour séparer les cas</li>
+            </ul>
+          </Notes>
         </Slide>
         <Slide transition={["fade"]}>
           <Heading size={1} fit caps lineHeight={1} textColor="secondary">
@@ -429,14 +450,13 @@ export default class Presentation extends React.Component {
           </List>
           <Notes>
             <ul className="notes">
-              <li>
-                useEffect ne gère pas l'implémentation des await, il faut sortir
-                la fonction
-              </li>
+              <li>utiliser then ou sortir la fonction</li>
               <li>
                 A chaque rendu, au lancement de l'effect on capture l'état du
-                composant. Si on veut suivre une valeur, il faut utiliser le Ref
+                composant. Si on veut suivre une valeur, il faut utiliser le
+                Ref.
               </li>
+              <li>cleanup idem ! il est initialiser au moment de l'init</li>
               <li>
                 useEffect remplace lifecycle et ses multiples implémentations
               </li>
@@ -465,19 +485,42 @@ export default class Presentation extends React.Component {
           <Heading size={2} textColor="secondary">
             useContext
           </Heading>
-          <Image src={useContextPng} height="42em" margin="2em auto" />
+          <Image src={useContextPng} height="35em" margin="2em auto" />
+        </Slide>
+        <Slide transition={["fade"]}>
+          <Heading size={2} textColor="secondary">
+            useContext
+          </Heading>
+          <Image src={useContextPng2} height="35em" margin="2em auto" />
         </Slide>
         <Slide transition={["fade"]}>
           <Heading size={2} textColor="secondary">
             useCallback & useMemo
           </Heading>
-          <Image src={useCallbackUseMemoPng} height="20em" margin="2em auto" />
+          <Image src={useCallbackUseMemoPng} height="35em" margin="2em auto" />
+          <Notes>
+            <ul className="notes">
+              <li>Avec le use Callback on peut jouer avec les dépendance</li>
+              <li>
+                Avec le useMemo on peut mettre en cache des composant (loading,
+                etc)
+              </li>
+            </ul>
+          </Notes>
         </Slide>
         <Slide transition={["fade"]}>
           <Heading size={2} textColor="secondary">
             useRef
           </Heading>
           <Image src={useRefPng} height="42em" margin="2em auto" />
+          <Notes>
+            <ul className="notes">
+              <li>
+                Use Ref permet de tracker n'importe quoi , object dom, fonction,
+                props etc...
+              </li>
+            </ul>
+          </Notes>
         </Slide>
         <Slide bgImage={rule1} bgDarken="0.7">
           <Heading size={1} lineHeight={1} textColor="secondary">
@@ -516,7 +559,7 @@ export default class Presentation extends React.Component {
             </Appear>
           </List>
           <Appear>
-            <Image src={eslintRulesPng} height="10em" margin="2em auto" />
+            <Image src={eslintRulesPng} height="15em" margin="2em auto" />
           </Appear>
           <Notes>
             <ol className="notes">
@@ -549,15 +592,18 @@ export default class Presentation extends React.Component {
             </Appear>
           </List>
           <Notes>
-            <ol className="notes">
+            <ul className="notes">
               <li>Sortir les useState etc du form dans un useForme</li>
-            </ol>
+            </ul>
           </Notes>
         </Slide>
         <Slide bgImage={renovation} bgDarken="0.7">
           <Heading size={1} lineHeight={1} textColor="secondary">
             Revoir son application
           </Heading>
+          <Notes>
+            <div className="notes">Démo ! Présentation du code</div>
+          </Notes>
         </Slide>
         <Slide transition={["fade"]}>
           <Heading size={2} lineHeight={1} textColor="secondary">
@@ -568,7 +614,7 @@ export default class Presentation extends React.Component {
               <ListItem textSize="3em">Component Pattern</ListItem>
             </Appear>
             <Appear>
-              <ListItem textSize="3em">HOC / Recompose</ListItem>
+              <ListItem textSize="3em">HOC / Hooks</ListItem>
             </Appear>
             <Appear>
               <ListItem textSize="3em">TypeScript</ListItem>
@@ -659,6 +705,10 @@ export default class Presentation extends React.Component {
               </Appear>
             </List>
           </Fill>
+          <Notes>
+            <h1>======DEMO =====</h1>
+            AU TITRE : Montrer la différence Hooks /HOC
+          </Notes>
         </Slide>
         <Slide>
           <div className="doubleimage-container">
@@ -680,11 +730,11 @@ export default class Presentation extends React.Component {
           </Heading>
           <Fill>
             <List>
-              <ListItem textSize="3em">Très similaire</ListItem>
+              <ListItem textSize="3em">Très similaires</ListItem>
               <ListItem textSize="3em">
-                Propriétés visibles : pas de colision
+                Propriétés visibles : pas de collision
               </ListItem>
-              <ListItem textSize="3em">Visibilité du codé généré</ListItem>
+              <ListItem textSize="3em">Visibilité du code généré</ListItem>
               <Appear>
                 <ListItem textSize="3em">
                   Les use à la place des with
@@ -707,18 +757,24 @@ export default class Presentation extends React.Component {
           <Heading size={1} lineHeight={1} textColor="secondary">
             Complex State Management
           </Heading>
+          <Notes>
+            Plutot que d'utiliser Redux, pourquoi ne pas utiliser les Hooks ? 
+          </Notes>
         </Slide>
         <Slide transition={["fade"]}>
           <Heading size={2} textColor="secondary">
             Store
           </Heading>
-          <Image src={redux1} height="35em" margin="2em auto" />
+          <Image src={redux1} height="45em" margin="2em auto" />
+          <Notes>
+            Tout commence ici, nous créons le store. Il n'est qu'un etat complet de l'application
+          </Notes>
         </Slide>
         <Slide transition={["fade"]}>
           <Heading size={2} textColor="secondary">
             Utilisation
           </Heading>
-          <Image src={redux2} height="35em" margin="2em auto" />
+          <Image src={redux2} height="45em" margin="2em auto" />
         </Slide>
         <Slide bgImage={power} bgDarken="0.6">
           <Heading size={1} lineHeight={1} textColor="secondary">
@@ -734,10 +790,10 @@ export default class Presentation extends React.Component {
           </Notes>
         </Slide>
         <Slide transition={["fade"]}>
-          <Image src={typescript1} height="40em" margin="2em auto" />
+          <Image src={typescript1} height="50em" margin="2em auto" />
         </Slide>
         <Slide transition={["fade"]}>
-          <Image src={typescript2} height="45em" margin="2em auto" />
+          <Image src={typescript2} height="50em" margin="2em auto" />
         </Slide>
         <Slide bgImage={tests} bgDarken="0.7">
           <Heading size={1} lineHeight={1} textColor="secondary">
@@ -831,7 +887,7 @@ export default class Presentation extends React.Component {
             </List>
           </Fill>
         </Slide>
-        <Slide bgImage={question} bgDarken="0.7">
+        <Slide bgImage={question} bgDarken="0.6">
           <Heading size={2} lineHeight={1} textColor="secondary">
             Questions
           </Heading>
@@ -840,7 +896,7 @@ export default class Presentation extends React.Component {
           <Heading size={1} lineHeight={1} textColor="secondary">
             Merci
           </Heading>
-          <Image src={yapot} width="30em" />
+          <Image src={yapot} width="35em" />
         </Slide>
       </Deck>
     );

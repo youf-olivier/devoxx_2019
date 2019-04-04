@@ -1,7 +1,7 @@
 const [state, dispatch] 
   = useReducer(reducer, initialState);
 
-reducer = (state, action) => {
+const reducer = (state, action) => {
   switch (action.type) {
     case 'reset':
       return initialState;
@@ -14,21 +14,21 @@ reducer = (state, action) => {
   }
 };
 
-Counter = ({ initialCount }) => {
-  const [state, dispatch] 
-    = useReducer(reducer, { count: initialCount });
+const Counter = ({ initialCount }) => {
+  const defaultState = { count: initialCount };
+  const [state, dispatch] = useReducer(reducer, defaultState);
   return (
-    <>
+    <div>
       Count: {state.count}
-      <button onClick={
-        () => dispatch({ type: 'reset' })
-      }>Reset</button>
-      <button onClick={
-        () => dispatch({ type: 'increment' })
-      }>+</button>
-      <button onClick={
-        () => dispatch({ type: 'decrement' })
-      }>-</button>
-    </>
+      <button onClick={() => dispatch({ type: 'reset' })}>
+        Reset
+	  </button>
+      <button onClick={() => dispatch({ type: 'increment' })}>
+        +
+      </button>
+      <button onClick={() => dispatch({ type: 'decrement' })}>
+        -
+      </button>
+    </div>
   );
 };
