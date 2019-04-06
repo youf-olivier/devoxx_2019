@@ -13,7 +13,8 @@ import {
   Appear,
   Notes,
   S,
-  Text
+  Text,
+  Link
 } from "spectacle";
 import CodeSlide from "spectacle-code-slide";
 
@@ -21,7 +22,7 @@ import Speaker from "./Speaker";
 import olivier from "./assets/images/olivier.jpg";
 import olivierbg from "./assets/images/olivierbg.gif";
 import axalogo from "./assets/images/axalogo.svg";
-import reactLogo from "./assets/images/reactlogo.svg";
+import logoDevoxx from "./assets/images/logoDevoxx.png";
 import news from "./assets/images/news.gif";
 import theonewithhooks from "./assets/images/theonewithhooks.png";
 import recompose from "./assets/images/recompose.png";
@@ -40,7 +41,7 @@ import dolls from "./assets/images/dolls.gif";
 import power from "./assets/images/power.gif";
 import tests from "./assets/images/tests.gif";
 import kentcdoddstweet from "./assets/images/kentcdoddstweet.png";
-import reactbeer from "./assets/images/reactbeer.jpeg";
+import devoxx from "./assets/images/devoxx.png";
 
 import useStatePng from "./assets/code/useState.png";
 import useReducerPng from "./assets/code/useReducer.png";
@@ -90,14 +91,16 @@ export default class Presentation extends React.Component {
         contentWidth="1280px"
         contentHeight="800px"
       >
-        <Slide transition={["fade"]} bgImage={reactbeer} />
-        <Slide transition={["fade"]} bgImage={reactLogo} bgDarken="0.8">
+        <Slide transition={["fade"]} bgImage={devoxx} bgDarken="0.3">
           <Heading size={1} fit caps lineHeight={1} textColor="secondary">
             Les Hooks
           </Heading>
           <Heading size={1} fit caps lineHeight={3} textColor="secondary">
             Comment revoir son application React
           </Heading>
+          <Text><Link href="https://oyouf.github.io">https://oyouf.github.io</Link></Text>
+          <Text><Link href="https://github.com/oyouf/devoxx_2019">https://github.com/oyouf/devoxx_2019</Link></Text>
+          <Image src={logoDevoxx} margin="16px auto" />
           <Notes>
             <div className="notes">
               Ici nous n'allons pas montrer de bests practices, mais des
@@ -408,7 +411,7 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide transition={["fade"]}>
           <Heading size={1} fit lineHeight={1} textColor="secondary">
-            Quelques subltilités
+            Quelques subtilités
           </Heading>
           <Appear>
             <Text textSize="3em">Async/Await</Text>
@@ -675,7 +678,7 @@ export default class Presentation extends React.Component {
               <Text textSize="3em">Très similaire</Text>
             </Appear>
             <Appear>
-              <Text textSize="3em">Propriétés visibles : pas de colision</Text>
+              <Text textSize="3em">Propriétés visibles : pas de collision</Text>
             </Appear>
             <Appear>
               <Text textSize="3em">Visibilité du code généré</Text>
