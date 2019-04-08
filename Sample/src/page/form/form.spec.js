@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "react-testing-library";
+import { render, waitForDomChange } from "react-testing-library";
 import Component from "./form";
 
 describe("Form test suite", () => {
@@ -31,8 +31,8 @@ describe("Form test suite", () => {
       message: "erreur de saisie"
     }
   };
-  it("renders correctly", () => {
-    const { asFragment } = render(
+  it("renders correctly", async () => {
+    const { asFragment , container} = render(
       <Component
         users={users}
         inputs={inputs}
@@ -41,6 +41,9 @@ describe("Form test suite", () => {
         hasSubmitOnce={true}
       />
     );
+
+    //We wait for user loading
+    await waitForDomChange({ container });
     expect(asFragment()).toMatchSnapshot();
   });
 });

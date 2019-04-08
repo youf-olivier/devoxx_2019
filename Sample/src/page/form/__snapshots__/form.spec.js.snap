@@ -41,10 +41,68 @@ exports[`Form test suite renders correctly 1`] = `
   <div
     class="user-list"
     data-testid="userlist"
-    style="display: none;"
-  />
-  <div>
-    Loading...
+    style=""
+  >
+    <div
+      class="user-card"
+      data-testid="usercard"
+    >
+      <a
+        class="user-card__link"
+        href="http://comptegithub.com"
+      >
+        <img
+          alt="login1"
+          class="user-card__avatar"
+          src="http://avatar1.jpg"
+        />
+        <span
+          class="user-card__login"
+        >
+          login1
+        </span>
+      </a>
+    </div>
+    <div
+      class="user-card"
+      data-testid="usercard"
+    >
+      <a
+        class="user-card__link"
+        href="http://comptegithub.com"
+      >
+        <img
+          alt="login2"
+          class="user-card__avatar"
+          src="http://avatar2.jpg"
+        />
+        <span
+          class="user-card__login"
+        >
+          login2
+        </span>
+      </a>
+    </div>
+    <div
+      class="user-card"
+      data-testid="usercard"
+    >
+      <a
+        class="user-card__link"
+        href="http://comptegithub.com"
+      >
+        <img
+          alt="login3"
+          class="user-card__avatar"
+          src="http://avatar3.jpg"
+        />
+        <span
+          class="user-card__login"
+        >
+          login3
+        </span>
+      </a>
+    </div>
   </div>
 </DocumentFragment>
 `;

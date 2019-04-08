@@ -64,7 +64,16 @@ const FormContainer = () => {
   }, [inputs]);
 
   useEffect(() => {
-    fetchUser(query).then(users => setUsers(users.items));
+    // Race Condition
+    let didCancel = false;
+    fetchUser(query).then(users => {
+      if (!didCancel) {
+        setUsers(users.items);
+      }
+    });
+    return () => {
+      didCancel = true;
+    };
   }, [query]);
 
   const onChange = useCallback(onChangeCB(validator)(inputs, setInputs), [

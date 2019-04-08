@@ -49,6 +49,7 @@ Tests :
 * https://testing-library.com/
 * https://www.valentinog.com/blog/testing-react/
 * https://react-testing-examples.com/
+* https://github.com/threepointone/react-act-examples/blob/master/sync.md
 
 BBL de décembre :
 * https://github.com/oyouf/hooks_bbl
@@ -65,7 +66,7 @@ Injection de dépendance :
 Functionnal Programming
 * https://medium.com/capbase-engineering/react-hooks-is-the-functional-paradise-youve-been-waiting-for-994e53f65f94
 
-Remplacer Redux : 
+Remplacer Redux pour le global State: 
 * https://medium.com/octopus-labs-london/replacing-redux-with-react-hooks-and-context-part-1-11b72ffdb533
 * https://medium.com/capbase-engineering/part-3-the-react-hooks-based-alternative-to-redux-and-the-flux-pattern-a726220a8a9a
 

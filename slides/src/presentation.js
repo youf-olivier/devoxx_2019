@@ -92,15 +92,15 @@ export default class Presentation extends React.Component {
         contentHeight="800px"
       >
         <Slide transition={["fade"]} bgImage={devoxx} bgDarken="0.3">
-          <Heading size={1} fit caps lineHeight={1} textColor="secondary">
+          <Heading size={1} fit caps lineHeight={1} textColor="#FFF">
             Les Hooks
           </Heading>
-          <Heading size={1} fit caps lineHeight={3} textColor="secondary">
+          <Heading size={1} fit caps lineHeight={3} textColor="#FFF">
             Comment revoir son application React
           </Heading>
-          <Text><Link href="https://oyouf.github.io">https://oyouf.github.io</Link></Text>
+          <Text margin="6em 0 0 0" ><Link href="https://oyouf.github.io">https://oyouf.github.io</Link></Text>
           <Text><Link href="https://github.com/oyouf/devoxx_2019">https://github.com/oyouf/devoxx_2019</Link></Text>
-          <Image src={logoDevoxx} margin="16px auto" />
+          <Image src={logoDevoxx} margin="3em auto" />
           <Notes>
             <div className="notes">
               Ici nous n'allons pas montrer de bests practices, mais des
@@ -516,7 +516,7 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide transition={["fade"]}>
           <Heading size={1} fit lineHeight={1} textColor="secondary">
-            Deux simples règles
+            Deux règles simples
           </Heading>
           <List>
             <Appear>
@@ -681,13 +681,9 @@ export default class Presentation extends React.Component {
               <Text textSize="3em">Propriétés visibles : pas de collision</Text>
             </Appear>
             <Appear>
-              <Text textSize="3em">Visibilité du code généré</Text>
+              <Text textSize="3em">Lisibilité du tree view</Text>
             </Appear>
           </Fill>
-          <Notes>
-            <h1>======DEMO =====</h1>
-            AU TITRE : Montrer la différence Hooks /HOC
-          </Notes>
         </Slide>
         <Slide>
           <div className="doubleimage-container">
@@ -710,7 +706,7 @@ export default class Presentation extends React.Component {
           <Fill>
             <Text textSize="3em">Très similaires</Text>
             <Text textSize="3em">Propriétés visibles : pas de collision</Text>
-            <Text textSize="3em">Visibilité du code généré</Text>
+            <Text textSize="3em">Lisibilité du tree view</Text>
             <Appear>
               <Text textSize="3em">
                 Les use à la place des with
