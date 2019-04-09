@@ -42,6 +42,7 @@ import power from "./assets/images/power.gif";
 import tests from "./assets/images/tests.gif";
 import kentcdoddstweet from "./assets/images/kentcdoddstweet.png";
 import devoxx from "./assets/images/devoxx.png";
+import owl from "./assets/images/owl.png";
 
 import useStatePng from "./assets/code/useState.png";
 import useReducerPng from "./assets/code/useReducer.png";
@@ -67,9 +68,9 @@ import customUtilisation from "./assets/images/customUtilisation.png";
 import codeRecompose from "./assets/code/sw_recompose.example";
 import codeClass from "./assets/code/sw_class.example";
 import codeBase from "./assets/code/sw_base.example";
-
 import withHoc from "./assets/code/withHoc.example";
 import useHooks from "./assets/code/useHooks.example";
+import rtl1 from "./assets/code/rtl1.example";
 
 import "spectacle-theme-nova/syntax/prism.nova.css";
 import "spectacle-theme-nova/syntax/prism-javascript";
@@ -98,8 +99,14 @@ export default class Presentation extends React.Component {
           <Heading size={1} fit caps lineHeight={3} textColor="#FFF">
             Comment revoir son application React
           </Heading>
-          <Text margin="6em 0 0 0" ><Link href="https://oyouf.github.io">https://oyouf.github.io</Link></Text>
-          <Text><Link href="https://github.com/oyouf/devoxx_2019">https://github.com/oyouf/devoxx_2019</Link></Text>
+          <Text margin="6em 0 0 0">
+            <Link href="https://oyouf.github.io">https://oyouf.github.io</Link>
+          </Text>
+          <Text>
+            <Link href="https://github.com/oyouf/devoxx_2019">
+              https://github.com/oyouf/devoxx_2019
+            </Link>
+          </Text>
           <Image src={logoDevoxx} margin="3em auto" />
           <Notes>
             <div className="notes">
@@ -403,7 +410,7 @@ export default class Presentation extends React.Component {
                 Le cleanup est appelé lors de l'unmouut et a chaque render
               </li>
               <li>
-                les deps permettent de savoir si on doit relancer au render{" "}
+                les deps permettent de savoir si on doit relancer au render
               </li>
               <li>On peut séparer les effect pour séparer les cas</li>
             </ul>
@@ -722,7 +729,7 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide bgImage={reactredux} bgDarken="0.7">
           <Heading size={1} lineHeight={1} textColor="secondary">
-            Complex State Management
+            Global State Management
           </Heading>
           <Notes>
             Plutot que d'utiliser Redux, pourquoi ne pas utiliser les Hooks ?
@@ -744,6 +751,83 @@ export default class Presentation extends React.Component {
           </Heading>
           <Image src={redux2} height="45em" margin="2em auto" />
         </Slide>
+        <Slide transition={["fade"]}>
+          <Heading size={2} textColor="secondary">
+            Utilisation
+          </Heading>
+          <Appear>
+            <Text textAlign="left" textSize="3em">
+              <span
+                role="img"
+                aria-label="check ok"
+                style={{ marginRight: "2em" }}
+              >
+                ✅
+              </span>
+              State Global
+            </Text>
+          </Appear>
+          <Appear>
+            <Text textAlign="left" textSize="3em">
+              <span
+                role="img"
+                aria-label="check ok"
+                style={{ marginRight: "2em" }}
+              >
+                ✅
+              </span>
+              Mise à jour ponctuelle
+            </Text>
+          </Appear>
+          <Appear>
+            <Text textAlign="left" textSize="3em" margin="0 0 0 2em">
+              <span
+                role="img"
+                aria-label="finger emoji"
+                style={{ marginRight: "2em" }}
+              >
+                👉🏻
+              </span>
+              Login, Messages, Formulaire
+            </Text>
+          </Appear>
+          <Appear>
+            <Text textAlign="left" textSize="3em">
+              <span
+                role="img"
+                aria-label="stop emoji"
+                style={{ marginRight: "2em" }}
+              >
+                ⛔️
+              </span>
+              Mise à jour trop fréquente (Rerendering complet)
+            </Text>
+          </Appear>
+          <Appear>
+            <Text textAlign="left" textSize="3em">
+              <span
+                role="img"
+                aria-label="stop emoji"
+                style={{ marginRight: "2em" }}
+              >
+                ⛔️
+              </span>
+              Flux-like state management
+            </Text>
+          </Appear>
+          <Appear>
+            <Text textAlign="left" textSize="3em" margin="0 0 0 2em">
+              <span
+                role="img"
+                aria-label="finger-emoji"
+                style={{ marginRight: "2em" }}
+              >
+                👉🏻
+              </span>
+              Source multiples, middleware, composants simultanés
+            </Text>
+          </Appear>
+        </Slide>
         <Slide bgImage={power} bgDarken="0.6">
           <Heading size={1} lineHeight={1} textColor="secondary">
             TypeScript
@@ -758,7 +842,7 @@ export default class Presentation extends React.Component {
           </Notes>
         </Slide>
         <Slide transition={["fade"]}>
-          <Image src={typescript1} height="50em" margin="2em auto" />
+          <Image src={typescript1} height="45em" margin="2em auto" />
         </Slide>
         <Slide transition={["fade"]}>
           <Image src={typescript2} height="50em" margin="2em auto" />
@@ -816,6 +900,96 @@ export default class Presentation extends React.Component {
           <Heading size={1} lineHeight={1} textColor="secondary">
             React Testing Library
           </Heading>
+        </Slide>
+        <CodeSlide
+          bgColor={"primary"}
+          transition={[]}
+          lang="jsx"
+          code={rtl1}
+          textSize="2em"
+          ranges={[
+            {
+              loc: [0, 40],
+              title: "Exemple"
+            },
+            { loc: [0, 1] },
+            { loc: [2, 3] },
+            { loc: [4, 6] },
+            { loc: [7, 11] },
+            { loc: [12, 13] },
+            { loc: [13, 15] }
+          ]}
+        />
+        <Slide transition={["fade"]}>
+          <Heading size={2} textColor="secondary">
+            Queries : Variantes
+          </Heading>
+          <Fill>
+            <Appear>
+              <Text textSize="3em">GetBy / GetAllBy</Text>
+            </Appear>
+            <Appear>
+              <Text textSize="3em">QueryBy / QueryAllBy</Text>
+            </Appear>
+            <Appear>
+              <Text textSize="3em">FindBy / FindAllBy</Text>
+            </Appear>
+          </Fill>
+          <Notes>
+            <ol className="notes">
+              <li>Get : Prend les occurence et plante si rien trouvé</li>
+              <li>
+                Query ; Renvoi null si rien ne match (parfait pour tester la non
+                présence
+              </li>
+              <li>
+                Find : Combinaisan de get + waitforelement. Timeout : 4500ms
+              </li>
+            </ol>
+          </Notes>
+        </Slide>
+        <Slide transition={["fade"]}>
+          <Heading size={2} textColor="secondary">
+            Queries
+          </Heading>
+          <Fill>
+            <Appear>
+              <Text textSize="3em">ByLabelText</Text>
+            </Appear>
+            <Appear>
+              <Text textSize="3em">ByPlaceholderText</Text>
+            </Appear>
+            <Appear>
+              <Text textSize="3em">ByText</Text>
+            </Appear>
+            <Appear>
+              <Text textSize="3em">ByAltText</Text>
+            </Appear>
+            <Appear>
+              <Text textSize="3em">ByTitle</Text>
+            </Appear>
+            <Appear>
+              <Text textSize="3em">ByDisplayValue</Text>
+            </Appear>
+            <Appear>
+              <Text textSize="3em">ByRole</Text>
+            </Appear>
+            <Appear>
+              <Text textSize="3em">ByTestId</Text>
+            </Appear>
+          </Fill>
+        </Slide>
+        <Slide>
+          <Heading size={2} textColor="secondary">
+            En complément
+          </Heading>
+          <Appear>
+            <div>
+              <Text textSize="5em">Jest-dom</Text>
+              <Image src={owl} margin="2em auto" />
+              <Text textSize="2em">Custom jest matchers to test the state of the DOM</Text>
+            </div>
+          </Appear>
         </Slide>
         <Slide transition={["fade"]}>
           <Heading size={2} lineHeight={1} textColor="secondary">

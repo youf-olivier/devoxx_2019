@@ -1,0 +1,15 @@
+const rendering = render(<FormContainer />);
+
+const { getByText, getByLabelText, findAllByTestId, container } = rendering;
+
+const userCards = await findAllByTestId("usercard");
+expect(userCards.length).toBe(3); //or not to be
+
+const input = getByLabelText(/Compte Github/i);
+const button = getByText(/rechercher/i);
+await fireEvent.change(input, {target:{value: "oyouf"}});
+await fireEvent.click(button);
+
+await waitForDomChange({ container });
+const userCardsAfterSearch = await findAllByTestId("usercard");
+expect(userCardsAfterSearch.length).toBe(1);

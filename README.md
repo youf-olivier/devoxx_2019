@@ -50,6 +50,8 @@ Tests :
 * https://www.valentinog.com/blog/testing-react/
 * https://react-testing-examples.com/
 * https://github.com/threepointone/react-act-examples/blob/master/sync.md
+* https://github.com/gnapse/jest-dom
+* https://www.youtube.com/user/kentdoddsfamily/videos
 
 BBL de décembre :
 * https://github.com/oyouf/hooks_bbl
@@ -69,6 +71,8 @@ Functionnal Programming
 Remplacer Redux pour le global State: 
 * https://medium.com/octopus-labs-london/replacing-redux-with-react-hooks-and-context-part-1-11b72ffdb533
 * https://medium.com/capbase-engineering/part-3-the-react-hooks-based-alternative-to-redux-and-the-flux-pattern-a726220a8a9a
+* https://ideamotive.co/blog/redux-vs-context-api/
+* https://victorops.com/blog/react-context-vs-react-redux
 
 Typescript
 * https://medium.com/@jrwebdev/react-hooks-in-typescript-88fce7001d0d
