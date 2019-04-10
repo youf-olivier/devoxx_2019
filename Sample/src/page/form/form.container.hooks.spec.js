@@ -58,10 +58,12 @@ describe("Form container tests suite", () => {
   });
 
   it("should return correct render before request return", async () => {
-    const { findAllByTestId } = render(<FormContainer />, {
-      wrapper: getWrapper("", () => {})
-    });
-
+    const { findAllByTestId } = render(
+      <FormContainer />,
+      {
+        wrapper: getWrapper("", () => {})
+      }
+    );
     const userCards = await findAllByTestId("usercard");
     expect(userCards.length).toBe(3); //or not to be
   });

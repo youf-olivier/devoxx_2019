@@ -64,6 +64,7 @@ import typescript1 from "./assets/images/typescript1.png";
 import typescript2 from "./assets/images/typescript2.png";
 import custominstall from "./assets/images/custominstall.png";
 import customUtilisation from "./assets/images/customUtilisation.png";
+import rtlRender from "./assets/images/rtlRender.png";
 
 import codeRecompose from "./assets/code/sw_recompose.example";
 import codeClass from "./assets/code/sw_class.example";
@@ -99,7 +100,7 @@ export default class Presentation extends React.Component {
           <Heading size={1} fit caps lineHeight={3} textColor="#FFF">
             Comment revoir son application React
           </Heading>
-          <Text margin="6em 0 0 0">
+          <Text margin="5.5em 0 0 0">
             <Link href="https://oyouf.github.io">https://oyouf.github.io</Link>
           </Text>
           <Text>
@@ -149,7 +150,7 @@ export default class Presentation extends React.Component {
           <Heading size={1} fit lineHeight={1} textColor="secondary">
             Hier : Les HOC avec Recompose
           </Heading>
-          <Image src={adclite} height="5em" margin="2em auto" />
+          <Image src={adclite} height="15em" margin="2em auto" />
         </Slide>
         <Slide transition={["fade"]} bgImage={tunning} bgDarken="0.8">
           <Heading size={2} lineHeight={1} textColor="secondary">
@@ -867,7 +868,7 @@ export default class Presentation extends React.Component {
           <Heading size={1} lineHeight={1} textColor="secondary">
             Tests
           </Heading>
-          <Image src={testPyramid} height="45em" margin="2em auto" />
+          <Image src={testPyramid} height="40em" margin="2em auto" />
         </Slide>
         <Slide transition={["fade"]}>
           <Heading size={2} textColor="secondary">
@@ -901,25 +902,33 @@ export default class Presentation extends React.Component {
             React Testing Library
           </Heading>
         </Slide>
-        <CodeSlide
-          bgColor={"primary"}
-          transition={[]}
-          lang="jsx"
-          code={rtl1}
-          textSize="2em"
-          ranges={[
-            {
-              loc: [0, 40],
-              title: "Exemple"
-            },
-            { loc: [0, 1] },
-            { loc: [2, 3] },
-            { loc: [4, 6] },
-            { loc: [7, 11] },
-            { loc: [12, 13] },
-            { loc: [13, 15] }
-          ]}
-        />
+        <Slide>
+          <Heading>Render</Heading>
+          <Image src={rtlRender} margin="2em auto" />
+        </Slide>
+        <Slide>
+          <Heading>Render Result</Heading>
+          <Fill>
+            <Appear>
+              <Text textSize="3em">Container / BaseElement</Text>
+            </Appear>
+            <Appear>
+              <Text textSize="3em">Debug</Text>
+            </Appear>
+            <Appear>
+              <Text textSize="3em">Rerender / Unmount</Text>
+            </Appear>
+            <Appear>
+              <Text textSize="3em">asFragment</Text>
+            </Appear>
+            <Appear>
+              <Text textSize="3em">queries</Text>
+            </Appear>
+          </Fill>
+          <Notes>
+            <ul><li>Container , BaseElement : Noeux HTML pour accéders au Dom généré</li></ul>
+          </Notes>
+        </Slide>
         <Slide transition={["fade"]}>
           <Heading size={2} textColor="secondary">
             Queries : Variantes
@@ -979,6 +988,41 @@ export default class Presentation extends React.Component {
             </Appear>
           </Fill>
         </Slide>
+        <CodeSlide
+          bgColor={"primary"}
+          transition={[]}
+          lang="jsx"
+          code={rtl1}
+          textSize="2em"
+          ranges={[
+            {
+              loc: [0, 40],
+              title: "Exemple"
+            },
+            { loc: [0, 1] },
+            { loc: [2, 3] },
+            { loc: [4, 6] },
+            { loc: [7, 11] },
+            { loc: [12, 13] },
+            { loc: [13, 15] }
+          ]}
+        />
+        <Slide transition={["fade"]}>
+          <Heading size={2} textColor="secondary">
+            Async
+          </Heading>
+          <Fill>
+            <Appear>
+              <Text textSize="3em">wait</Text>
+            </Appear>
+            <Appear>
+              <Text textSize="3em">waitForElement</Text>
+            </Appear>
+            <Appear>
+              <Text textSize="3em">waitForDomChange</Text>
+            </Appear>
+          </Fill>
+        </Slide>
         <Slide>
           <Heading size={2} textColor="secondary">
             En complément
@@ -987,8 +1031,17 @@ export default class Presentation extends React.Component {
             <div>
               <Text textSize="5em">Jest-dom</Text>
               <Image src={owl} margin="2em auto" />
-              <Text textSize="2em">Custom jest matchers to test the state of the DOM</Text>
+              <Text textSize="2em">
+                Custom jest matchers to test the state of the DOM
+              </Text>
             </div>
+          </Appear>
+          <Appear>
+            <Text>
+              toBeDisabled, toBeEnabled, toBeEmpty, toBeInTheDocument, toBeVisible,
+              toContainElement, toContainHTML, toHaveAttribute, toHaveClass,
+              toHaveFocus, toHaveFormValues, toHaveStyle, toHaveTextContent
+            </Text>
           </Appear>
         </Slide>
         <Slide transition={["fade"]}>
@@ -1004,10 +1057,10 @@ export default class Presentation extends React.Component {
             </Text>
           </Appear>
           <Appear>
-            <Image src={custominstall} margin="2em auto" height="10em" />
+            <Image src={custominstall} margin="2em auto" height="8em" />
           </Appear>
           <Appear>
-            <Image src={customUtilisation} margin="2em auto" height="20em" />
+            <Image src={customUtilisation} margin="2em auto" height="25em" />
           </Appear>
         </Slide>
         <Slide bgImage={question} bgDarken="0.6">

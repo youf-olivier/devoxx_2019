@@ -1,0 +1,10 @@
+function render(
+  ui: React.ReactElement<any>,
+  options?: {
+	container?: HTMLElement, // Base container
+  	baseElement?: HTMLElement, // Base Element
+  	hydrate?: boolean, // Server side rendering
+  	queries?: Queries, // Customs Queries
+  	wrapper?: React.ComponentType // Custom wrapper
+  }
+) : RenderResult
