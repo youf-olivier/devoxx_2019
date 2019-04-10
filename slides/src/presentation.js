@@ -441,7 +441,13 @@ export default class Presentation extends React.Component {
             </Text>
           </Appear>
           <Appear>
-            <Text textSize="3em">Fetch Data et Update : ⚠️ Race condition</Text>
+            <Text textSize="3em">
+              Fetch Data et Update :{" "}
+              <span role="img" aria-label="warning emoji">
+                ⚠️
+              </span>{" "}
+              Race condition
+            </Text>
           </Appear>
           <Notes>
             <ul className="notes">
@@ -926,7 +932,11 @@ export default class Presentation extends React.Component {
             </Appear>
           </Fill>
           <Notes>
-            <ul><li>Container , BaseElement : Noeux HTML pour accéders au Dom généré</li></ul>
+            <ul>
+              <li>
+                Container , BaseElement : Noeux HTML pour accéders au Dom généré
+              </li>
+            </ul>
           </Notes>
         </Slide>
         <Slide transition={["fade"]}>
@@ -1038,9 +1048,10 @@ export default class Presentation extends React.Component {
           </Appear>
           <Appear>
             <Text>
-              toBeDisabled, toBeEnabled, toBeEmpty, toBeInTheDocument, toBeVisible,
-              toContainElement, toContainHTML, toHaveAttribute, toHaveClass,
-              toHaveFocus, toHaveFormValues, toHaveStyle, toHaveTextContent
+              toBeDisabled, toBeEnabled, toBeEmpty, toBeInTheDocument,
+              toBeVisible, toContainElement, toContainHTML, toHaveAttribute,
+              toHaveClass, toHaveFocus, toHaveFormValues, toHaveStyle,
+              toHaveTextContent
             </Text>
           </Appear>
         </Slide>
