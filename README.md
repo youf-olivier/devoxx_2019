@@ -73,6 +73,7 @@ Remplacer Redux pour le global State:
 * https://medium.com/capbase-engineering/part-3-the-react-hooks-based-alternative-to-redux-and-the-flux-pattern-a726220a8a9a
 * https://ideamotive.co/blog/redux-vs-context-api/
 * https://victorops.com/blog/react-context-vs-react-redux
+* https://staleclosures.dev/from-redux-to-hooks-case-study/
 
 Typescript
 * https://medium.com/@jrwebdev/react-hooks-in-typescript-88fce7001d0d

@@ -14,6 +14,7 @@ import "./style.scss";
 import logotwitter from "./assets/images/twitter.svg";
 import logogithub from "./assets/images/github.svg";
 import logowebsite from "./assets/images/website.svg";
+import logoStrava from "./assets/images/strava.svg";
 import reactbeerlille from "./assets/images/reactbeerlille.jpg";
 
 const Speaker = ({
@@ -25,6 +26,7 @@ const Speaker = ({
   bg,
   website,
   twitter,
+  strava,
   github
 }) => (
   <Slide id={`${name}`} transition={["fade"]} bgImage={bg} bgDarken={0.75}>
@@ -87,6 +89,19 @@ const Speaker = ({
             href={`https://github.com/${github}`}
           >
             <span className="speaker__social-text">{github}</span>
+          </Link>
+        </ListItem>
+      )}
+      {strava && (
+        <ListItem className="speaker__social-item">
+          <Image className="speaker__social-img" src={logoStrava} width={30} height={30} />
+          <Link
+            className="speaker__social-link"
+            title={`Go to https://www.strava.com/athletes/15961694`}
+            target="_blank"
+            href={`https://www.strava.com/athletes/15961694`}
+          >
+            <span className="speaker__social-text">{strava}</span>
           </Link>
         </ListItem>
       )}

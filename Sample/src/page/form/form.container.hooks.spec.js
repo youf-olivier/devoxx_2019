@@ -3,9 +3,10 @@ import { render, waitForDomChange, fireEvent } from "react-testing-library";
 import "react-hooks-testing-library/cleanup-after-each";
 import axios from "axios";
 import MockAdapter from "axios-mock-adapter";
-
-import FormContainer from "./form.container.hooks";
 import { MessageContext } from "commons/messages";
+
+// Component to test
+import FormContainer from "./form.container.hooks";
 
 const getWrapper = (message, displayMessage) => ({ children }) => (
   <MessageContext.Provider value={{ message, displayMessage }}>

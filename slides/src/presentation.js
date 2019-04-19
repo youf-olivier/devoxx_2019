@@ -24,7 +24,7 @@ import olivierbg from "./assets/images/olivierbg.gif";
 import axalogo from "./assets/images/axalogo.svg";
 import logoDevoxx from "./assets/images/logoDevoxx.png";
 import news from "./assets/images/news.gif";
-import theonewithhooks from "./assets/images/theonewithhooks.png";
+import theonewithhooks from "./assets/images/minorrelease.jpg_large";
 import recompose from "./assets/images/recompose.png";
 import adclite from "./assets/images/adclite.jpg";
 import tunning from "./assets/images/tunning.jpg";
@@ -65,6 +65,8 @@ import typescript2 from "./assets/images/typescript2.png";
 import custominstall from "./assets/images/custominstall.png";
 import customUtilisation from "./assets/images/customUtilisation.png";
 import rtlRender from "./assets/images/rtlRender.png";
+import useEffectAsync from "./assets/images/useEffectAsync.png";
+import raceCondition from "./assets/images/raceCondition.png";
 
 import codeRecompose from "./assets/code/sw_recompose.example";
 import codeClass from "./assets/code/sw_class.example";
@@ -100,15 +102,15 @@ export default class Presentation extends React.Component {
           <Heading size={1} fit caps lineHeight={3} textColor="#FFF">
             Comment revoir son application React
           </Heading>
-          <Text margin="5.5em 0 0 0">
+          <Image src={logoDevoxx} margin="3em auto" />
+          <Text margin="5.5em 0 0 0" textSize="2em">
             <Link href="https://oyouf.github.io">https://oyouf.github.io</Link>
           </Text>
-          <Text>
+          <Text textSize="2em">
             <Link href="https://github.com/oyouf/devoxx_2019">
               https://github.com/oyouf/devoxx_2019
             </Link>
           </Text>
-          <Image src={logoDevoxx} margin="3em auto" />
           <Notes>
             <div className="notes">
               Ici nous n'allons pas montrer de bests practices, mais des
@@ -117,12 +119,7 @@ export default class Presentation extends React.Component {
           </Notes>
         </Slide>
         <Slide transition={["fade"]} bgImage={news} bgDarken="0.5">
-          <Heading size={1} fit caps lineHeight={1} textColor="secondary">
-            The fact
-          </Heading>
-          <Appear>
-            <Image src={theonewithhooks} margin="16px auto" />
-          </Appear>
+          <Image src={theonewithhooks} height={'50em'} margin="10px auto" />
           <Notes>
             <h4>Slide notes</h4>
             <ol className="notes">
@@ -145,6 +142,7 @@ export default class Presentation extends React.Component {
           bg={olivierbg}
           twitter="oyouf"
           github="oyouf"
+          strava="olivier youf"
         />
         <Slide transition={["fade"]} bgImage={recompose} bgDarken="0.8">
           <Heading size={1} fit lineHeight={1} textColor="secondary">
@@ -424,6 +422,15 @@ export default class Presentation extends React.Component {
           <Appear>
             <Text textSize="3em">Async/Await</Text>
           </Appear>
+        </Slide>
+        <Slide transition={["fade"]}>
+          <Image src={useEffectAsync} height="50em" margin="2em auto" />
+        </Slide>
+        <Slide transition={["fade"]}>
+          <Heading size={1} fit lineHeight={1} textColor="secondary">
+            Quelques subtilités
+          </Heading>
+          <Text textSize="3em">Async/Await</Text>
           <Appear>
             <Text textSize="3em">Chaque render possède son état</Text>
           </Appear>
@@ -483,6 +490,9 @@ export default class Presentation extends React.Component {
           </Notes>
         </Slide>
         <Slide transition={["fade"]}>
+          <Image src={raceCondition} height="50em" margin="2em auto" />
+        </Slide>
+        <Slide transition={["fade"]}>
           <Heading size={2} textColor="secondary">
             useContext
           </Heading>
@@ -535,18 +545,6 @@ export default class Presentation extends React.Component {
           <List>
             <Appear>
               <ListItem textSize="3em">
-                Les Hooks sont appelés en haut
-                <List>
-                  <Appear>
-                    <ListItem>
-                      Evitez les boucles, if et fonctions imbriquées
-                    </ListItem>
-                  </Appear>
-                </List>
-              </ListItem>
-            </Appear>
-            <Appear>
-              <ListItem textSize="3em">
                 Les hooks ne doivent être appelés que dans des fonctions React
                 <List>
                   <Appear>
@@ -554,6 +552,18 @@ export default class Presentation extends React.Component {
                   </Appear>
                   <Appear>
                     <ListItem>Appels dans les custom Hooks</ListItem>
+                  </Appear>
+                </List>
+              </ListItem>
+            </Appear>
+            <Appear>
+              <ListItem textSize="3em">
+                Les Hooks sont appelés en haut
+                <List>
+                  <Appear>
+                    <ListItem>
+                      Evitez les boucles, if et fonctions imbriquées
+                    </ListItem>
                   </Appear>
                 </List>
               </ListItem>
@@ -582,13 +592,11 @@ export default class Presentation extends React.Component {
             Custom Hook
           </Heading>
           <Appear>
-            <Text textSize="3em">Réutilisabilité</Text>
-          </Appear>
-          <Appear>
-            <Text textSize="3em">Lisibilité</Text>
-          </Appear>
-          <Appear>
-            <Text textSize="3em">Testabilité</Text>
+            <div>
+              <Text textSize="3em">Réutilisabilité</Text>
+              <Text textSize="3em">Lisibilité</Text>
+              <Text textSize="3em">Testabilité</Text>
+            </div>
           </Appear>
           <Notes>
             <ul className="notes">
@@ -609,18 +617,10 @@ export default class Presentation extends React.Component {
             Contexte
           </Heading>
           <List textColor="quaternary">
-            <Appear>
-              <ListItem textSize="3em">Component Pattern</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem textSize="3em">HOC / Hooks</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem textSize="3em">TypeScript</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem textSize="3em">Tests</ListItem>
-            </Appear>
+            <ListItem textSize="3em">Component Pattern</ListItem>
+            <ListItem textSize="3em">HOC / Hooks</ListItem>
+            <ListItem textSize="3em">TypeScript</ListItem>
+            <ListItem textSize="3em">Tests</ListItem>
           </List>
         </Slide>
         <Slide bgImage={dolls} bgDarken="0.7">
@@ -914,23 +914,15 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide>
           <Heading>Render Result</Heading>
-          <Fill>
-            <Appear>
+          <Appear>
+            <Fill>
               <Text textSize="3em">Container / BaseElement</Text>
-            </Appear>
-            <Appear>
               <Text textSize="3em">Debug</Text>
-            </Appear>
-            <Appear>
               <Text textSize="3em">Rerender / Unmount</Text>
-            </Appear>
-            <Appear>
               <Text textSize="3em">asFragment</Text>
-            </Appear>
-            <Appear>
               <Text textSize="3em">queries</Text>
-            </Appear>
-          </Fill>
+            </Fill>
+          </Appear>
           <Notes>
             <ul>
               <li>
@@ -943,17 +935,13 @@ export default class Presentation extends React.Component {
           <Heading size={2} textColor="secondary">
             Queries : Variantes
           </Heading>
-          <Fill>
-            <Appear>
+          <Appear>
+            <Fill>
               <Text textSize="3em">GetBy / GetAllBy</Text>
-            </Appear>
-            <Appear>
               <Text textSize="3em">QueryBy / QueryAllBy</Text>
-            </Appear>
-            <Appear>
               <Text textSize="3em">FindBy / FindAllBy</Text>
-            </Appear>
-          </Fill>
+            </Fill>
+          </Appear>
           <Notes>
             <ol className="notes">
               <li>Get : Prend les occurence et plante si rien trouvé</li>
@@ -971,32 +959,18 @@ export default class Presentation extends React.Component {
           <Heading size={2} textColor="secondary">
             Queries
           </Heading>
-          <Fill>
-            <Appear>
+          <Appear>
+            <Fill>
               <Text textSize="3em">ByLabelText</Text>
-            </Appear>
-            <Appear>
               <Text textSize="3em">ByPlaceholderText</Text>
-            </Appear>
-            <Appear>
               <Text textSize="3em">ByText</Text>
-            </Appear>
-            <Appear>
               <Text textSize="3em">ByAltText</Text>
-            </Appear>
-            <Appear>
               <Text textSize="3em">ByTitle</Text>
-            </Appear>
-            <Appear>
               <Text textSize="3em">ByDisplayValue</Text>
-            </Appear>
-            <Appear>
               <Text textSize="3em">ByRole</Text>
-            </Appear>
-            <Appear>
               <Text textSize="3em">ByTestId</Text>
-            </Appear>
-          </Fill>
+            </Fill>
+          </Appear>
         </Slide>
         <CodeSlide
           bgColor={"primary"}
@@ -1021,17 +995,13 @@ export default class Presentation extends React.Component {
           <Heading size={2} textColor="secondary">
             Async
           </Heading>
-          <Fill>
-            <Appear>
+          <Appear>
+            <Fill>
               <Text textSize="3em">wait</Text>
-            </Appear>
-            <Appear>
               <Text textSize="3em">waitForElement</Text>
-            </Appear>
-            <Appear>
               <Text textSize="3em">waitForDomChange</Text>
-            </Appear>
-          </Fill>
+            </Fill>
+          </Appear>
         </Slide>
         <Slide>
           <Heading size={2} textColor="secondary">
